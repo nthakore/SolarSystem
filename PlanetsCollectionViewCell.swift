@@ -10,5 +10,4 @@ import UIKit
 
 class PlanetsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var planetNameLabel: UILabel!
-    
 }
