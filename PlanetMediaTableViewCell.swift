@@ -10,14 +10,4 @@ import UIKit
 
 class PlanetMediaTableViewCell: UITableViewCell {
     @IBOutlet weak var planetMediaCollectionView: UICollectionView!
-    
-    //func setCollectionViewDataSourceDelegate
-       // <D: UICollectionViewDataSource & UICollectionViewDelegate>
-        //(dataSourceDelegate: D, forRow row: Int) {
-        
-       // planetMediaCollectionView.delegate = dataSourceDelegate
-        //planetMediaCollectionView.dataSource = dataSourceDelegate
-        //planetMediaCollectionView.tag = row
-       // planetMediaCollectionView.reloadData()
-    //}
 }

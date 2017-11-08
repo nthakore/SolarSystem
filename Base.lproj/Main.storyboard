@@ -18,58 +18,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Smiley" translatesAutoresizingMaskIntoConstraints="NO" id="jn8-av-Hwf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Smiley" translatesAutoresizingMaskIntoConstraints="NO" id="jn8-av-Hwf">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="ktp-Uf-RZk"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sox-so-rmz" userLabel="Planet Info Label">
-                                <rect key="frame" x="0.0" y="150" width="375" height="300"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="planet info" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sox-so-rmz" userLabel="Planet Info Label">
+                                <rect key="frame" x="0.0" y="150" width="375" height="20.5"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="sAZ-ID-W8G"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o8h-nT-pvt">
-                                <rect key="frame" x="0.0" y="450" width="375" height="217"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o8h-nT-pvt">
+                                <rect key="frame" x="0.0" y="170.5" width="375" height="496.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlanetMediaTableViewCell" id="OTu-Ll-nX4" userLabel="PlanetMediaTableViewCell" customClass="PlanetMediaTableViewCell" customModule="SolarSystem" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OTu-Ll-nX4" id="YhT-2Q-fa3">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WXO-u3-UuI" userLabel="PlanetMediaCollectionView">
-                                                    <rect key="frame" x="0.0" y="-43" width="375" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WXO-u3-UuI" userLabel="PlanetMediaCollectionView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7EH-dQ-rfA">
-                                                        <size key="itemSize" width="100" height="40"/>
+                                                        <size key="itemSize" width="99" height="99"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PlanetMediaCollectionViewCell" id="9re-Xo-Zq7" customClass="PlanetMediaCollectionViewCell" customModule="SolarSystem" customModuleProvider="target">
-                                                            <rect key="frame" x="10" y="2" width="100" height="40"/>
+                                                            <rect key="frame" x="10" y="0.5" width="99" height="99"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="99" height="99"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="irC-ij-o1f">
-                                                                        <rect key="frame" x="-70" y="-44" width="240" height="128"/>
-                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="irC-ij-o1f">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="99" height="99"/>
                                                                     </imageView>
                                                                 </subviews>
                                                             </view>
                                                             <color key="backgroundColor" red="1" green="0.3921568627" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstItem="irC-ij-o1f" firstAttribute="top" secondItem="9re-Xo-Zq7" secondAttribute="top" id="Jcc-Fq-FNw"/>
+                                                                <constraint firstItem="irC-ij-o1f" firstAttribute="leading" secondItem="9re-Xo-Zq7" secondAttribute="leading" id="Wtg-DW-fMv"/>
+                                                                <constraint firstAttribute="bottom" secondItem="irC-ij-o1f" secondAttribute="bottom" id="aiD-SR-d3f"/>
+                                                                <constraint firstAttribute="trailing" secondItem="irC-ij-o1f" secondAttribute="trailing" id="wMV-fa-ZBf"/>
+                                                            </constraints>
+                                                            <size key="customSize" width="99" height="99"/>
                                                             <connections>
                                                                 <outlet property="imageView" destination="irC-ij-o1f" id="gUj-nc-vn0"/>
                                                             </connections>
@@ -77,6 +79,12 @@
                                                     </cells>
                                                 </collectionView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="WXO-u3-UuI" firstAttribute="leading" secondItem="YhT-2Q-fa3" secondAttribute="leading" id="1XS-Hm-Gtx"/>
+                                                <constraint firstAttribute="bottom" secondItem="WXO-u3-UuI" secondAttribute="bottom" id="4RE-cU-2Q2"/>
+                                                <constraint firstAttribute="trailing" secondItem="WXO-u3-UuI" secondAttribute="trailing" id="NXp-q8-DNh"/>
+                                                <constraint firstItem="WXO-u3-UuI" firstAttribute="top" secondItem="YhT-2Q-fa3" secondAttribute="top" id="wv6-Gp-clG"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="planetMediaCollectionView" destination="WXO-u3-UuI" id="ddz-Aq-eQy"/>
