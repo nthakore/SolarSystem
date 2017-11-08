@@ -21,6 +21,7 @@ class PlanetsCollectionViewController: UIViewController {
         planetsCollectionView.delegate = self
     }
     
+    // Mocking data
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
