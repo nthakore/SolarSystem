@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2984A5F1FB3502400F85B2F /* PlanetMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2984A5E1FB3502400F85B2F /* PlanetMedia.swift */; };
+		C2984A611FB3573800F85B2F /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2984A601FB3573800F85B2F /* Details.storyboard */; };
+		C2984A631FB3578B00F85B2F /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2984A621FB3578B00F85B2F /* VideoViewController.swift */; };
+		C2984A651FB3654E00F85B2F /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2984A641FB3654E00F85B2F /* PhotoViewController.swift */; };
+		C2984A671FB366F600F85B2F /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2984A661FB366F600F85B2F /* PhotoCollectionViewCell.swift */; };
 		C2C943901FB0AE990041FC67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C9438F1FB0AE990041FC67 /* AppDelegate.swift */; };
 		C2C943921FB0AE990041FC67 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C2C943911FB0AE990041FC67 /* art.scnassets */; };
 		C2C943941FB0AE990041FC67 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C943931FB0AE990041FC67 /* ARViewController.swift */; };
@@ -22,6 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C2984A5E1FB3502400F85B2F /* PlanetMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetMedia.swift; sourceTree = "<group>"; };
+		C2984A601FB3573800F85B2F /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
+		C2984A621FB3578B00F85B2F /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		C2984A641FB3654E00F85B2F /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		C2984A661FB366F600F85B2F /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		C2C9438C1FB0AE990041FC67 /* SolarSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SolarSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C9438F1FB0AE990041FC67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2C943911FB0AE990041FC67 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -73,9 +83,14 @@
 				C2C943931FB0AE990041FC67 /* ARViewController.swift */,
 				C2C943A31FB0BAB60041FC67 /* PlanetsCollectionViewController.swift */,
 				C2EE32361FB215ED00E7D6EA /* PlanetDetails.swift */,
+				C2984A5E1FB3502400F85B2F /* PlanetMedia.swift */,
 				C2C943A51FB0C7F30041FC67 /* PlanetsCollectionViewCell.swift */,
 				C2EE32341FB20AD000E7D6EA /* PlanetDetailsViewController.swift */,
 				C2C943951FB0AE990041FC67 /* Main.storyboard */,
+				C2984A601FB3573800F85B2F /* Details.storyboard */,
+				C2984A641FB3654E00F85B2F /* PhotoViewController.swift */,
+				C2984A661FB366F600F85B2F /* PhotoCollectionViewCell.swift */,
+				C2984A621FB3578B00F85B2F /* VideoViewController.swift */,
 				C2EE32381FB21ADA00E7D6EA /* PlanetMediaTableViewCell.swift */,
 				C2EE323A1FB21EEB00E7D6EA /* PlanetMediaCollectionViewCell.swift */,
 				C2C943981FB0AE990041FC67 /* Assets.xcassets */,
@@ -144,6 +159,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2984A611FB3573800F85B2F /* Details.storyboard in Resources */,
 				C2C943921FB0AE990041FC67 /* art.scnassets in Resources */,
 				C2C9439C1FB0AE990041FC67 /* LaunchScreen.storyboard in Resources */,
 				C2C943991FB0AE990041FC67 /* Assets.xcassets in Resources */,
@@ -163,9 +179,13 @@
 				C2C943A41FB0BAB60041FC67 /* PlanetsCollectionViewController.swift in Sources */,
 				C2EE32371FB215ED00E7D6EA /* PlanetDetails.swift in Sources */,
 				C2C943941FB0AE990041FC67 /* ARViewController.swift in Sources */,
+				C2984A671FB366F600F85B2F /* PhotoCollectionViewCell.swift in Sources */,
 				C2C943901FB0AE990041FC67 /* AppDelegate.swift in Sources */,
 				C2EE32351FB20AD000E7D6EA /* PlanetDetailsViewController.swift in Sources */,
+				C2984A5F1FB3502400F85B2F /* PlanetMedia.swift in Sources */,
+				C2984A631FB3578B00F85B2F /* VideoViewController.swift in Sources */,
 				C2EE32391FB21ADA00E7D6EA /* PlanetMediaTableViewCell.swift in Sources */,
+				C2984A651FB3654E00F85B2F /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -60,6 +60,19 @@ extension PlanetDetailsViewController: UITableViewDataSource {
 }
 
 extension PlanetDetailsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == imagesCollectionView {
+            let storyboard = UIStoryboard(name: "Details", bundle: nil)
+            if let photosController = storyboard.instantiateViewController(withIdentifier: "PhotoViewController") as? PhotoViewController {
+                present(photosController, animated: true, completion: nil)
+            }
+        } else if collectionView == videosCollectionView {
+            let storyboard = UIStoryboard(name: "Details", bundle: nil)
+            if let videosController = storyboard.instantiateViewController(withIdentifier: "VideoViewController") as? VideoViewController {
+                present(videosController, animated: true, completion: nil)
+            }
+        }
+    }
 }
 
 extension PlanetDetailsViewController: UICollectionViewDataSource {

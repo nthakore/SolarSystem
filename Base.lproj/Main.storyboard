@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GTl-wZ-ewu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5aj-dI-Fxc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--PlanetDetailsViewController-->
         <scene sceneID="Kib-l2-fKQ">
             <objects>
-                <viewController id="GTl-wZ-ewu" userLabel="PlanetDetailsViewController" customClass="PlanetDetailsViewController" customModule="SolarSystem" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlanetDetailsViewController" id="GTl-wZ-ewu" userLabel="PlanetDetailsViewController" customClass="PlanetDetailsViewController" customModule="SolarSystem" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nB7-yf-wxT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VNN-vt-ilQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="248.80000000000001" y="131.78410794602701"/>
+            <point key="canvasLocation" x="174" y="132"/>
         </scene>
         <!--ARViewController-->
         <scene sceneID="tXr-a1-R10">
@@ -133,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="975" y="132"/>
+            <point key="canvasLocation" x="-507" y="993"/>
         </scene>
         <!--PlanetsCollectionViewController-->
         <scene sceneID="9RV-5W-6IP">
@@ -163,9 +163,8 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Smiley" translatesAutoresizingMaskIntoConstraints="NO" id="iD5-sZ-1DT">
                                                     <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hr-RE-PUc" userLabel="Planet Label">
-                                                    <rect key="frame" x="5" y="62" width="80" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hr-RE-PUc" userLabel="Planet Label">
+                                                    <rect key="frame" x="5" y="83" width="80" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -176,8 +175,11 @@
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="iD5-sZ-1DT" secondAttribute="bottom" id="02e-mE-Zl7"/>
                                             <constraint firstAttribute="trailing" secondItem="iD5-sZ-1DT" secondAttribute="trailing" id="A8Z-zW-RuU"/>
+                                            <constraint firstItem="0Hr-RE-PUc" firstAttribute="leading" secondItem="sHg-WK-KbE" secondAttribute="leading" constant="5" id="D1F-6W-IPx"/>
                                             <constraint firstItem="iD5-sZ-1DT" firstAttribute="leading" secondItem="sHg-WK-KbE" secondAttribute="leading" id="HSg-Ze-JuE"/>
+                                            <constraint firstAttribute="trailing" secondItem="0Hr-RE-PUc" secondAttribute="trailing" constant="5" id="U4l-w6-8la"/>
                                             <constraint firstItem="iD5-sZ-1DT" firstAttribute="top" secondItem="sHg-WK-KbE" secondAttribute="top" id="beK-Iu-BZ1"/>
+                                            <constraint firstAttribute="bottom" secondItem="0Hr-RE-PUc" secondAttribute="bottom" constant="7" id="zWc-hw-6iz"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="planetNameLabel" destination="0Hr-RE-PUc" id="gai-lj-FnF"/>
@@ -195,14 +197,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="if7-P1-AB0"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="wO0-YP-N1F"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="U4b-Qe-7XV"/>
+                    <navigationItem key="navigationItem" id="tgx-ka-ruT"/>
                     <connections>
                         <outlet property="planetsCollectionView" destination="a9Q-Mj-TPO" id="GSI-Et-Rwd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6i-o1-BRK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-527.20000000000005" y="131.78410794602701"/>
+            <point key="canvasLocation" x="-506" y="132"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="SAg-DL-IUX">
@@ -215,8 +218,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="aAv-jw-cSf" kind="relationship" relationship="viewControllers" id="fPo-DC-DTW"/>
-                        <segue destination="BV1-FR-VrT" kind="relationship" relationship="viewControllers" id="Z8p-D8-Wf7"/>
+                        <segue destination="aAv-jw-cSf" kind="relationship" relationship="viewControllers" id="AZk-Wh-Qz5"/>
+                        <segue destination="BV1-FR-VrT" kind="relationship" relationship="viewControllers" id="Z3R-Ex-1XL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KZ6-Ea-MIn" userLabel="First Responder" sceneMemberID="firstResponder"/>
