@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C207130C1FB497E4009EE245 /* PlanetEarth.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C207130B1FB497E4009EE245 /* PlanetEarth.mp4 */; };
+		C207130F1FB4B0D9009EE245 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = C207130E1FB4B0D9009EE245 /* Video.swift */; };
+		C21600FC1FBCA9CD00DB3343 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21600FB1FBCA9CD00DB3343 /* Networking.swift */; };
+		C21600FE1FBCAEA200DB3343 /* NASAAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21600FD1FBCAEA200DB3343 /* NASAAPI.swift */; };
 		C2984A5F1FB3502400F85B2F /* PlanetMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2984A5E1FB3502400F85B2F /* PlanetMedia.swift */; };
 		C2984A611FB3573800F85B2F /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2984A601FB3573800F85B2F /* Details.storyboard */; };
-		C2984A631FB3578B00F85B2F /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2984A621FB3578B00F85B2F /* VideoViewController.swift */; };
 		C2984A651FB3654E00F85B2F /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2984A641FB3654E00F85B2F /* PhotoViewController.swift */; };
 		C2984A671FB366F600F85B2F /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2984A661FB366F600F85B2F /* PhotoCollectionViewCell.swift */; };
 		C2C943901FB0AE990041FC67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C9438F1FB0AE990041FC67 /* AppDelegate.swift */; };
@@ -20,6 +23,7 @@
 		C2C9439C1FB0AE990041FC67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2C9439A1FB0AE990041FC67 /* LaunchScreen.storyboard */; };
 		C2C943A41FB0BAB60041FC67 /* PlanetsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C943A31FB0BAB60041FC67 /* PlanetsCollectionViewController.swift */; };
 		C2C943A61FB0C7F30041FC67 /* PlanetsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C943A51FB0C7F30041FC67 /* PlanetsCollectionViewCell.swift */; };
+		C2DBCB381FBCC18A003A8B82 /* WikipediaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DBCB371FBCC18A003A8B82 /* WikipediaAPI.swift */; };
 		C2EE32351FB20AD000E7D6EA /* PlanetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EE32341FB20AD000E7D6EA /* PlanetDetailsViewController.swift */; };
 		C2EE32371FB215ED00E7D6EA /* PlanetDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EE32361FB215ED00E7D6EA /* PlanetDetails.swift */; };
 		C2EE32391FB21ADA00E7D6EA /* PlanetMediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EE32381FB21ADA00E7D6EA /* PlanetMediaTableViewCell.swift */; };
@@ -27,9 +31,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C207130B1FB497E4009EE245 /* PlanetEarth.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = PlanetEarth.mp4; sourceTree = "<group>"; };
+		C207130E1FB4B0D9009EE245 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		C21600FB1FBCA9CD00DB3343 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		C21600FD1FBCAEA200DB3343 /* NASAAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAAPI.swift; sourceTree = "<group>"; };
 		C2984A5E1FB3502400F85B2F /* PlanetMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetMedia.swift; sourceTree = "<group>"; };
 		C2984A601FB3573800F85B2F /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
-		C2984A621FB3578B00F85B2F /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		C2984A641FB3654E00F85B2F /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		C2984A661FB366F600F85B2F /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		C2C9438C1FB0AE990041FC67 /* SolarSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SolarSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +49,7 @@
 		C2C9439D1FB0AE990041FC67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2C943A31FB0BAB60041FC67 /* PlanetsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsCollectionViewController.swift; sourceTree = "<group>"; };
 		C2C943A51FB0C7F30041FC67 /* PlanetsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsCollectionViewCell.swift; sourceTree = "<group>"; };
+		C2DBCB371FBCC18A003A8B82 /* WikipediaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaAPI.swift; sourceTree = "<group>"; };
 		C2EE32341FB20AD000E7D6EA /* PlanetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailsViewController.swift; sourceTree = "<group>"; };
 		C2EE32361FB215ED00E7D6EA /* PlanetDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetails.swift; sourceTree = "<group>"; };
 		C2EE32381FB21ADA00E7D6EA /* PlanetMediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetMediaTableViewCell.swift; sourceTree = "<group>"; };
@@ -59,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C207130D1FB4AE0F009EE245 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C207130E1FB4B0D9009EE245 /* Video.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		C2C943831FB0AE990041FC67 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +94,7 @@
 		C2C9438E1FB0AE990041FC67 /* SolarSystem */ = {
 			isa = PBXGroup;
 			children = (
+				C207130D1FB4AE0F009EE245 /* Utilities */,
 				C2C9438F1FB0AE990041FC67 /* AppDelegate.swift */,
 				C2C943911FB0AE990041FC67 /* art.scnassets */,
 				C2C943931FB0AE990041FC67 /* ARViewController.swift */,
@@ -87,15 +104,18 @@
 				C2C943A51FB0C7F30041FC67 /* PlanetsCollectionViewCell.swift */,
 				C2EE32341FB20AD000E7D6EA /* PlanetDetailsViewController.swift */,
 				C2C943951FB0AE990041FC67 /* Main.storyboard */,
+				C21600FB1FBCA9CD00DB3343 /* Networking.swift */,
+				C21600FD1FBCAEA200DB3343 /* NASAAPI.swift */,
+				C2DBCB371FBCC18A003A8B82 /* WikipediaAPI.swift */,
 				C2984A601FB3573800F85B2F /* Details.storyboard */,
 				C2984A641FB3654E00F85B2F /* PhotoViewController.swift */,
 				C2984A661FB366F600F85B2F /* PhotoCollectionViewCell.swift */,
-				C2984A621FB3578B00F85B2F /* VideoViewController.swift */,
 				C2EE32381FB21ADA00E7D6EA /* PlanetMediaTableViewCell.swift */,
 				C2EE323A1FB21EEB00E7D6EA /* PlanetMediaCollectionViewCell.swift */,
 				C2C943981FB0AE990041FC67 /* Assets.xcassets */,
 				C2C9439A1FB0AE990041FC67 /* LaunchScreen.storyboard */,
 				C2C9439D1FB0AE990041FC67 /* Info.plist */,
+				C207130B1FB497E4009EE245 /* PlanetEarth.mp4 */,
 			);
 			name = SolarSystem;
 			sourceTree = "<group>";
@@ -159,6 +179,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C207130C1FB497E4009EE245 /* PlanetEarth.mp4 in Resources */,
 				C2984A611FB3573800F85B2F /* Details.storyboard in Resources */,
 				C2C943921FB0AE990041FC67 /* art.scnassets in Resources */,
 				C2C9439C1FB0AE990041FC67 /* LaunchScreen.storyboard in Resources */,
@@ -177,14 +198,17 @@
 				C2C943A61FB0C7F30041FC67 /* PlanetsCollectionViewCell.swift in Sources */,
 				C2EE323B1FB21EEB00E7D6EA /* PlanetMediaCollectionViewCell.swift in Sources */,
 				C2C943A41FB0BAB60041FC67 /* PlanetsCollectionViewController.swift in Sources */,
+				C21600FC1FBCA9CD00DB3343 /* Networking.swift in Sources */,
 				C2EE32371FB215ED00E7D6EA /* PlanetDetails.swift in Sources */,
 				C2C943941FB0AE990041FC67 /* ARViewController.swift in Sources */,
 				C2984A671FB366F600F85B2F /* PhotoCollectionViewCell.swift in Sources */,
+				C2DBCB381FBCC18A003A8B82 /* WikipediaAPI.swift in Sources */,
 				C2C943901FB0AE990041FC67 /* AppDelegate.swift in Sources */,
 				C2EE32351FB20AD000E7D6EA /* PlanetDetailsViewController.swift in Sources */,
 				C2984A5F1FB3502400F85B2F /* PlanetMedia.swift in Sources */,
-				C2984A631FB3578B00F85B2F /* VideoViewController.swift in Sources */,
+				C207130F1FB4B0D9009EE245 /* Video.swift in Sources */,
 				C2EE32391FB21ADA00E7D6EA /* PlanetMediaTableViewCell.swift in Sources */,
+				C21600FE1FBCAEA200DB3343 /* NASAAPI.swift in Sources */,
 				C2984A651FB3654E00F85B2F /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

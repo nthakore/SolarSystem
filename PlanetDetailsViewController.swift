@@ -64,13 +64,15 @@ extension PlanetDetailsViewController: UICollectionViewDelegate {
         if collectionView == imagesCollectionView {
             let storyboard = UIStoryboard(name: "Details", bundle: nil)
             if let photosController = storyboard.instantiateViewController(withIdentifier: "PhotoViewController") as? PhotoViewController {
+                photosController.startingIndexPath = indexPath
                 present(photosController, animated: true, completion: nil)
             }
         } else if collectionView == videosCollectionView {
-            let storyboard = UIStoryboard(name: "Details", bundle: nil)
-            if let videosController = storyboard.instantiateViewController(withIdentifier: "VideoViewController") as? VideoViewController {
-                present(videosController, animated: true, completion: nil)
+            guard let path = Bundle.main.path(forResource: "PlanetEarth", ofType: "mp4") else {
+                debugPrint("PlanetEarth.mp4 not found")
+                return
             }
+            Video.playVideoWithURLAndPresentingViewController(url: URL(fileURLWithPath: path), viewController: self)
         }
     }
 }

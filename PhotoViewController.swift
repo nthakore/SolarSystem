@@ -10,9 +10,22 @@ import UIKit
 
 class PhotoViewController: UIViewController {
     @IBOutlet weak var photoCollectionView: UICollectionView!
-}
+    var startingIndexPath: IndexPath?
 
-extension PhotoViewController: UICollectionViewDelegate {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        photoCollectionView.delegate = self
+        photoCollectionView.dataSource = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let index = startingIndexPath {
+            photoCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: false)
+        }
+    }
 }
 
 extension PhotoViewController: UICollectionViewDataSource {
@@ -26,5 +39,11 @@ extension PhotoViewController: UICollectionViewDataSource {
         }
         cell.imageView.image = UIImage(named: "cat")
         return cell
+    }
+}
+
+extension PhotoViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: photoCollectionView.bounds.width, height: photoCollectionView.bounds.height)
     }
 }
