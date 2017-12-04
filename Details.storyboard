@@ -38,15 +38,35 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mLs-xI-Goi">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CcB-eb-A6y">
+                                                    <rect key="frame" x="166" y="571" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uga-u1-dQd" userLabel="Button">
+                                                    <rect key="frame" x="309" y="20" width="46" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="X">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="closeButton:" destination="B7e-a2-bY3" eventType="touchUpInside" id="7LY-sC-VFD"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="CcB-eb-A6y" firstAttribute="centerX" secondItem="3NL-n5-6LT" secondAttribute="centerX" id="5YM-Tz-UCX"/>
                                             <constraint firstItem="mLs-xI-Goi" firstAttribute="top" secondItem="3NL-n5-6LT" secondAttribute="top" id="Hct-1a-Atx"/>
                                             <constraint firstAttribute="bottom" secondItem="mLs-xI-Goi" secondAttribute="bottom" id="PAu-BQ-5ME"/>
                                             <constraint firstItem="mLs-xI-Goi" firstAttribute="leading" secondItem="3NL-n5-6LT" secondAttribute="leading" id="gpX-t1-YCA"/>
+                                            <constraint firstAttribute="bottom" secondItem="CcB-eb-A6y" secondAttribute="bottom" constant="55" id="jYZ-o5-9Li"/>
                                             <constraint firstAttribute="trailing" secondItem="mLs-xI-Goi" secondAttribute="trailing" id="jpa-ZS-Nwu"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="imageDescription" destination="CcB-eb-A6y" id="G5g-QA-nF8"/>
                                             <outlet property="imageView" destination="mLs-xI-Goi" id="lLL-uZ-sh9"/>
                                         </connections>
                                     </collectionViewCell>

@@ -9,12 +9,12 @@
 import UIKit
 
 class Networking: NSObject {
-    static func executeDataTask(url: URL) {
+    static func executeDataTask(url: URL, networkCompletionHandler: (([String: AnyObject]?) -> Void)?) {
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let d = data {
-                if let foundationObject = try? JSONSerialization.jsonObject(with: d, options: []) {
-                    print(foundationObject)
-                }
+            if let d = data, let foundationObject = try? JSONSerialization.jsonObject(with: d, options: []), let dict = foundationObject as? [String: AnyObject] {
+                    networkCompletionHandler?(dict)
+            } else {
+                networkCompletionHandler?(nil)
             }
         }
         task.resume()

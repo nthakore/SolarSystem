@@ -14,22 +14,38 @@ enum PlanetMediaTableViewRow: Int {
 }
 
 class PlanetDetailsViewController: UIViewController {
-    
     @IBOutlet weak var planetImageView: UIImageView!
     @IBOutlet weak var planetInfoLabel: UILabel!
     @IBOutlet weak var planetMediaTableView: UITableView!
-    
     fileprivate weak var imagesCollectionView: UICollectionView?
     fileprivate weak var videosCollectionView: UICollectionView?
+    fileprivate var imageCellModels = [PlanetImageCellModel]()
     
+    @IBAction func closeButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         planetMediaTableView.delegate = self
         planetMediaTableView.dataSource = self
         
         // Remove extra separators
         planetMediaTableView.tableFooterView = UIView(frame: CGRect.zero)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        WikipediaAPI.fetchInfoForPlanet(planet: "Earth") { [weak self] (planetInfoText) in
+            DispatchQueue.main.async {
+//                self?.planetInfoLabel.text = planetInfoText
+            }
+        }
+        NASAAPI.fetchPhotosForPlanet(planet: "Mars") { [weak self] (planetImages) in
+            self?.imageCellModels = planetImages
+            DispatchQueue.main.async {
+                self?.imagesCollectionView?.reloadData()
+            }
+        }
     }
 }
 
@@ -65,6 +81,7 @@ extension PlanetDetailsViewController: UICollectionViewDelegate {
             let storyboard = UIStoryboard(name: "Details", bundle: nil)
             if let photosController = storyboard.instantiateViewController(withIdentifier: "PhotoViewController") as? PhotoViewController {
                 photosController.startingIndexPath = indexPath
+                photosController.imageCellModels = imageCellModels
                 present(photosController, animated: true, completion: nil)
             }
         } else if collectionView == videosCollectionView {
@@ -80,7 +97,7 @@ extension PlanetDetailsViewController: UICollectionViewDelegate {
 extension PlanetDetailsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == imagesCollectionView {
-            return 5
+            return imageCellModels.count
         } else if collectionView == videosCollectionView {
             return 3
         }
@@ -93,10 +110,12 @@ extension PlanetDetailsViewController: UICollectionViewDataSource {
         }
         
         if collectionView == imagesCollectionView {
-            cell.imageView.image = UIImage(named: "cat")
+            let cellModel = imageCellModels[indexPath.item]
+            cell.imageURLString = cellModel.imageURL
         }
+        
         if collectionView == videosCollectionView {
-            cell.imageView.image = UIImage(named: "dog")
+            cell.imageView.image = UIImage(named: "dog") 
         }
         return cell
     }

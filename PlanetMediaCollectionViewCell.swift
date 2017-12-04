@@ -7,7 +7,22 @@
 //
 
 import UIKit
+import Nuke
+
+typealias PlanetImageCellModel = (imageURL: String, imageCaption: String)
 
 class PlanetMediaCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
+    var imageURLString: String? {
+        didSet {
+            if let urlString = imageURLString, let imageURL = URL(string: urlString) {
+                Manager.shared.loadImage(with: imageURL, into: imageView)
+            }
+        }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
+    }
 }

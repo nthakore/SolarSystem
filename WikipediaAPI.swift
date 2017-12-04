@@ -11,12 +11,21 @@ import UIKit
 class WikipediaAPI: NSObject {
     fileprivate static let baseURL = "https://en.wikipedia.org/w/api.php?"
     
-    static func fetchInfoForPlanet(planet: String) {
+    static func fetchInfoForPlanet(planet: String, fetchCompletionHandler: ((String?) -> Void)?) {
         let urlString = WikipediaAPI.baseURL + "action=query&format=json&titles=\(planet)%20&prop=extracts&exintro&explaintext"
         
         if let url = URL(string: urlString) {
-            Networking.executeDataTask(url: url)
+            Networking.executeDataTask(url: url, networkCompletionHandler: { (responseObject) in
+                if let object = responseObject, let queryDict = object["query"] as? [String: AnyObject] {
+                    if let pagesDict = queryDict["pages"] as? [String: AnyObject] {
+                        if let pageNumberDict = pagesDict["9228"] as? [String: AnyObject] {
+                            if let extractText = pageNumberDict["extract"] as? String {
+                                fetchCompletionHandler?(extractText)
+                            }
+                        }
+                    }
+                }
+            })
         }
     }
-    
 }
