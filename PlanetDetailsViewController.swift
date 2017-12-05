@@ -46,6 +46,9 @@ class PlanetDetailsViewController: UIViewController {
                 self?.imagesCollectionView?.reloadData()
             }
         }
+        NASAAPI.fetchVideosForPlanet(planet: "Mars") { (planetVideos) in
+            print(planetVideos)
+        }
     }
 }
 

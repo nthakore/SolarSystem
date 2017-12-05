@@ -10,6 +10,7 @@ import UIKit
 import Nuke
 
 typealias PlanetImageCellModel = (imageURL: String, imageCaption: String)
+typealias PlanetVideoCellModel = (thumbnailURL: String, planetVideoURL: String)
 
 class PlanetMediaCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
