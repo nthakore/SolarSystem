@@ -18,7 +18,7 @@ class PlanetDetailsViewController: UIViewController {
     @IBOutlet weak var planetImageView: UIImageView!
     @IBOutlet weak var planetMediaTableView: UITableView!
     
-    fileprivate var planetInfoText: String?
+    var planetInfoText: String?
     fileprivate weak var imagesCollectionView: UICollectionView?
     fileprivate weak var videosCollectionView: UICollectionView?
     fileprivate var imageCellModels = [PlanetImageCellModel]()
@@ -62,6 +62,22 @@ class PlanetDetailsViewController: UIViewController {
 }
 
 extension PlanetDetailsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let row = PlanetMediaTableViewRow(rawValue: indexPath.row) {
+            switch row {
+            case .planetInfo:
+                let storyboard = UIStoryboard(name: "Details", bundle: nil)
+                if let infoController = storyboard.instantiateViewController(withIdentifier: "PlanetInfoViewController") as? PlanetInfoViewController {
+                    infoController.planetInfo = planetInfoText
+                    present(infoController, animated: true, completion: nil)
+                }
+            case .planetMediaImages:
+                break
+            case .planetMediaVideos:
+                break
+            }
+        }
+    }
 }
 
 extension PlanetDetailsViewController: UITableViewDataSource {
@@ -142,6 +158,8 @@ extension PlanetDetailsViewController: UICollectionViewDataSource {
         if collectionView == videosCollectionView {
             let cellModel = videoCellModels[indexPath.item]
             cell.imageURLString = cellModel.thumbnailURL
+            cell.playArrowImageView.alpha = 0.7
+            cell.playArrowImageView.image = UIImage(named: "Play Button")
         }
         return cell
     }

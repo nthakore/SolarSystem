@@ -12,14 +12,14 @@ class PlanetsCollectionViewController: UIViewController {
     
     @IBOutlet weak var planetsCollectionView: UICollectionView!
     
-    fileprivate var resultsForCollectionView = [PlanetDetails]()
+    fileprivate var itemsForCollectionView = [PlanetDetails]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         for index in 0...20 {
-            let result = PlanetDetails(planetName: "\(index)")
-            resultsForCollectionView.append(result)
+            let item = PlanetDetails(planetName: "\(index)")
+            itemsForCollectionView.append(item)
         }
         
         planetsCollectionView.dataSource = self
@@ -38,14 +38,14 @@ extension PlanetsCollectionViewController: UICollectionViewDelegate {
 
 extension PlanetsCollectionViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return resultsForCollectionView.count
+        return itemsForCollectionView.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlanetsCollectionViewCell", for: indexPath) as? PlanetsCollectionViewCell else {
             return UICollectionViewCell()
         }
         
-        let details = resultsForCollectionView[indexPath.item]
+        let details = itemsForCollectionView[indexPath.item]
         cell.planetNameLabel.text = details.planetName
         
         return cell

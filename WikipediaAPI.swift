@@ -18,7 +18,7 @@ class WikipediaAPI: NSObject {
             Networking.executeDataTask(url: url, networkCompletionHandler: { (responseObject) in
                 if let object = responseObject as? [String: AnyObject], let queryDict = object["query"] as? [String: AnyObject] {
                     if let pagesDict = queryDict["pages"] as? [String: AnyObject] {
-                        if let pageNumberDict = pagesDict["9228"] as? [String: AnyObject] {
+                        if let pageNumberDict = pagesDict["14640471"] as? [String: AnyObject] {
                             if let extractText = pageNumberDict["extract"] as? String {
                                 fetchCompletionHandler?(extractText)
                             }

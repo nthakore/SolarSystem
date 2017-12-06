@@ -14,6 +14,8 @@ typealias PlanetVideoCellModel = (thumbnailURL: String, planetVideoURL: String)
 
 class PlanetMediaCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var playArrowImageView: UIImageView!
+    
     var videoURLString: String?
     var imageURLString: String? {
         didSet {
