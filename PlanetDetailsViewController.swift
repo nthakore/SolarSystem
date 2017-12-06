@@ -9,21 +9,25 @@
 import UIKit
 
 enum PlanetMediaTableViewRow: Int {
+    case planetInfo
     case planetMediaImages
     case planetMediaVideos
 }
 
 class PlanetDetailsViewController: UIViewController {
     @IBOutlet weak var planetImageView: UIImageView!
-    @IBOutlet weak var planetInfoLabel: UILabel!
     @IBOutlet weak var planetMediaTableView: UITableView!
+    
+    fileprivate var planetInfoText: String?
     fileprivate weak var imagesCollectionView: UICollectionView?
     fileprivate weak var videosCollectionView: UICollectionView?
     fileprivate var imageCellModels = [PlanetImageCellModel]()
+    fileprivate var videoCellModels = [PlanetVideoCellModel]()
     
     @IBAction func closeButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -33,11 +37,13 @@ class PlanetDetailsViewController: UIViewController {
         // Remove extra separators
         planetMediaTableView.tableFooterView = UIView(frame: CGRect.zero)
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        WikipediaAPI.fetchInfoForPlanet(planet: "Earth") { [weak self] (planetInfoText) in
+        WikipediaAPI.fetchInfoForPlanet(planet: "Mars") { [weak self] (planetInfoText) in
             DispatchQueue.main.async {
-//                self?.planetInfoLabel.text = planetInfoText
+                self?.planetInfoText = planetInfoText
+                self?.planetMediaTableView.reloadData()
             }
         }
         NASAAPI.fetchPhotosForPlanet(planet: "Mars") { [weak self] (planetImages) in
@@ -46,8 +52,11 @@ class PlanetDetailsViewController: UIViewController {
                 self?.imagesCollectionView?.reloadData()
             }
         }
-        NASAAPI.fetchVideosForPlanet(planet: "Mars") { (planetVideos) in
-            print(planetVideos)
+        NASAAPI.fetchVideosForPlanet(planet: "Mars") { [weak self] (planetVideos) in
+            self?.videoCellModels = planetVideos
+            DispatchQueue.main.async {
+                self?.videosCollectionView?.reloadData()
+            }
         }
     }
 }
@@ -57,24 +66,38 @@ extension PlanetDetailsViewController: UITableViewDelegate {
 
 extension PlanetDetailsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlanetMediaTableViewCell") as? PlanetMediaTableViewCell,
-            let section = PlanetMediaTableViewRow(rawValue: indexPath.row) else {
+        guard let row = PlanetMediaTableViewRow(rawValue: indexPath.row) else {
             return UITableViewCell()
         }
         
-        switch section {
+        var tableViewCell = UITableViewCell()
+        
+        switch row {
+        case .planetInfo:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "PlanetInfoTableViewCell") as? PlanetInfoTableViewCell {
+                cell.planetInfoLabel.text = planetInfoText
+                tableViewCell = cell
+            }
         case .planetMediaImages:
-            imagesCollectionView = cell.planetMediaCollectionView
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "PlanetMediaTableViewCell") as? PlanetMediaTableViewCell {
+                imagesCollectionView = cell.planetMediaCollectionView
+                cell.planetMediaCollectionView.delegate = self
+                cell.planetMediaCollectionView.dataSource = self
+                tableViewCell = cell
+            }
         case .planetMediaVideos:
-            videosCollectionView = cell.planetMediaCollectionView
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "PlanetMediaTableViewCell") as? PlanetMediaTableViewCell {
+                videosCollectionView = cell.planetMediaCollectionView
+                cell.planetMediaCollectionView.delegate = self
+                cell.planetMediaCollectionView.dataSource = self
+                tableViewCell = cell
+            }
         }
-        cell.planetMediaCollectionView.delegate = self
-        cell.planetMediaCollectionView.dataSource = self
-        return cell
+        return tableViewCell
     }
 }
 
@@ -88,11 +111,10 @@ extension PlanetDetailsViewController: UICollectionViewDelegate {
                 present(photosController, animated: true, completion: nil)
             }
         } else if collectionView == videosCollectionView {
-            guard let path = Bundle.main.path(forResource: "PlanetEarth", ofType: "mp4") else {
-                debugPrint("PlanetEarth.mp4 not found")
-                return
+            let cellModel = videoCellModels[indexPath.item]
+            if let videoURL = URL(string: cellModel.planetVideoURL) {
+                Video.playVideoWithURLAndPresentingViewController(url: videoURL, viewController: self)
             }
-            Video.playVideoWithURLAndPresentingViewController(url: URL(fileURLWithPath: path), viewController: self)
         }
     }
 }
@@ -102,7 +124,7 @@ extension PlanetDetailsViewController: UICollectionViewDataSource {
         if collectionView == imagesCollectionView {
             return imageCellModels.count
         } else if collectionView == videosCollectionView {
-            return 3
+            return videoCellModels.count
         }
         return 0
     }
@@ -118,7 +140,8 @@ extension PlanetDetailsViewController: UICollectionViewDataSource {
         }
         
         if collectionView == videosCollectionView {
-            cell.imageView.image = UIImage(named: "dog") 
+            let cellModel = videoCellModels[indexPath.item]
+            cell.imageURLString = cellModel.thumbnailURL
         }
         return cell
     }

@@ -20,22 +20,20 @@ class NASAAPI: NSObject {
                 if let object = responseObject as? [String: AnyObject], let collectionDict = object["collection"] as? [String: AnyObject] {
                     if let itemsArray = collectionDict["items"] as? [[String: AnyObject]] {
                         var numberOfItems = 5
+                        var planetVideoModel: PlanetVideoCellModel = ("", "")
+                        var planetVideos = [PlanetVideoCellModel]()
                         for item in itemsArray[0...4] {
                             if let assetCollectionURLString = item["href"] as? String {
                                 if let encodedAssetCollectionURLString = assetCollectionURLString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let assetURL = URL(string: encodedAssetCollectionURLString) {
                                     Networking.executeDataTask(url: assetURL, networkCompletionHandler: { (assetsObject) in
                                         if let videoLinks = assetsObject as? [String] {
-                                            
-                                            var planetVideoModel: PlanetVideoCellModel = ("", "")
-                                            var planetVideos = [PlanetVideoCellModel]()
-                                            
                                             for link in videoLinks {
                                                 if link.range(of: "small.mp4") != nil {
                                                     if let encodedURL = link.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
                                                        planetVideoModel.planetVideoURL = encodedURL
                                                     }
                                                 }
-                                                if link.range(of: "small_thumb_00001.png") != nil {
+                                                if link.range(of: "small_thumb_00002.png") != nil {
                                                     if let encodedURL = link.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
                                                         planetVideoModel.thumbnailURL = encodedURL
                                                     }

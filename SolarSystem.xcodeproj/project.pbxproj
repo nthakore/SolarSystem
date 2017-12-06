@@ -16,6 +16,7 @@
 		C223B2681FBE35D100398211 /* NormalizedQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C223B2671FBE35D100398211 /* NormalizedQuery.swift */; };
 		C223B26A1FBE364800398211 /* Pages.swift in Sources */ = {isa = PBXBuildFile; fileRef = C223B2691FBE364800398211 /* Pages.swift */; };
 		C223B26C1FBE367500398211 /* PageNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C223B26B1FBE367500398211 /* PageNumber.swift */; };
+		C266D3471FD8437B00C68066 /* PlanetInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C266D3461FD8437B00C68066 /* PlanetInfoTableViewCell.swift */; };
 		C2984A611FB3573800F85B2F /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2984A601FB3573800F85B2F /* Details.storyboard */; };
 		C2984A651FB3654E00F85B2F /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2984A641FB3654E00F85B2F /* PhotoViewController.swift */; };
 		C2984A671FB366F600F85B2F /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2984A661FB366F600F85B2F /* PhotoCollectionViewCell.swift */; };
@@ -44,6 +45,7 @@
 		C223B2671FBE35D100398211 /* NormalizedQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalizedQuery.swift; sourceTree = "<group>"; };
 		C223B2691FBE364800398211 /* Pages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pages.swift; sourceTree = "<group>"; };
 		C223B26B1FBE367500398211 /* PageNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageNumber.swift; sourceTree = "<group>"; };
+		C266D3461FD8437B00C68066 /* PlanetInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetInfoTableViewCell.swift; sourceTree = "<group>"; };
 		C2984A601FB3573800F85B2F /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
 		C2984A641FB3654E00F85B2F /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		C2984A661FB366F600F85B2F /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				C2C943A51FB0C7F30041FC67 /* PlanetsCollectionViewCell.swift */,
 				C2EE32341FB20AD000E7D6EA /* PlanetDetailsViewController.swift */,
 				C2C943951FB0AE990041FC67 /* Main.storyboard */,
+				C266D3461FD8437B00C68066 /* PlanetInfoTableViewCell.swift */,
 				C260D9DE1FBDDC52002497C8 /* API */,
 				C2984A601FB3573800F85B2F /* Details.storyboard */,
 				C2984A641FB3654E00F85B2F /* PhotoViewController.swift */,
@@ -299,6 +302,7 @@
 				C2C943A41FB0BAB60041FC67 /* PlanetsCollectionViewController.swift in Sources */,
 				C21600FC1FBCA9CD00DB3343 /* Networking.swift in Sources */,
 				C2EE32371FB215ED00E7D6EA /* PlanetDetails.swift in Sources */,
+				C266D3471FD8437B00C68066 /* PlanetInfoTableViewCell.swift in Sources */,
 				C223B26A1FBE364800398211 /* Pages.swift in Sources */,
 				C2C943941FB0AE990041FC67 /* ARViewController.swift in Sources */,
 				C2984A671FB366F600F85B2F /* PhotoCollectionViewCell.swift in Sources */,

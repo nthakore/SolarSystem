@@ -12,8 +12,6 @@ import AVFoundation
 
 class Video: NSObject {
     static func playVideoWithURLAndPresentingViewController(url: URL, viewController: UIViewController) {
-       
-        
         let player = AVPlayer(url: url)
         let controller = AVPlayerViewController()
         controller.player = player

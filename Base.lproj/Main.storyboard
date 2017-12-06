@@ -24,15 +24,8 @@
                                     <constraint firstAttribute="height" constant="150" id="ktp-Uf-RZk"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="planet info" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sox-so-rmz" userLabel="Planet Info Label">
-                                <rect key="frame" x="0.0" y="150" width="375" height="20.5"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o8h-nT-pvt">
-                                <rect key="frame" x="0.0" y="170.5" width="375" height="496.5"/>
+                                <rect key="frame" x="0.0" y="150" width="375" height="517"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlanetMediaTableViewCell" id="OTu-Ll-nX4" userLabel="PlanetMediaTableViewCell" customClass="PlanetMediaTableViewCell" customModule="SolarSystem" customModuleProvider="target">
@@ -43,7 +36,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WXO-u3-UuI" userLabel="PlanetMediaCollectionView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7EH-dQ-rfA">
                                                         <size key="itemSize" width="99" height="99"/>
@@ -90,6 +83,41 @@
                                             <outlet property="planetMediaCollectionView" destination="WXO-u3-UuI" id="ddz-Aq-eQy"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlanetInfoTableViewCell" id="Rmu-09-od2" customClass="PlanetInfoTableViewCell" customModule="SolarSystem" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="128" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rmu-09-od2" id="aPO-ab-7nF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXl-yK-43V">
+                                                    <rect key="frame" x="5" y="5" width="365" height="65"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See more..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gb8-hC-VxR">
+                                                    <rect key="frame" x="282" y="78" width="87" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nXl-yK-43V" firstAttribute="top" secondItem="aPO-ab-7nF" secondAttribute="top" constant="5" id="34y-8P-Olk"/>
+                                                <constraint firstItem="nXl-yK-43V" firstAttribute="leading" secondItem="aPO-ab-7nF" secondAttribute="leading" constant="5" id="5rC-W2-J2T"/>
+                                                <constraint firstAttribute="bottom" secondItem="Gb8-hC-VxR" secondAttribute="bottom" constant="1" id="MPu-cZ-Kz7"/>
+                                                <constraint firstItem="Gb8-hC-VxR" firstAttribute="top" secondItem="nXl-yK-43V" secondAttribute="bottom" constant="8" id="m4M-gQ-v8d"/>
+                                                <constraint firstAttribute="trailing" secondItem="nXl-yK-43V" secondAttribute="trailing" constant="5" id="n0C-EW-UPc"/>
+                                                <constraint firstAttribute="bottom" secondItem="nXl-yK-43V" secondAttribute="bottom" constant="30" id="pen-Iq-g9Y"/>
+                                                <constraint firstAttribute="trailing" secondItem="Gb8-hC-VxR" secondAttribute="trailing" constant="6" id="rdL-qp-4DM"/>
+                                                <constraint firstItem="Gb8-hC-VxR" firstAttribute="leading" relation="lessThanOrEqual" secondItem="aPO-ab-7nF" secondAttribute="leading" constant="282" id="yDd-of-ILF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="planetInfoLabel" destination="nXl-yK-43V" id="8ud-kr-LR3"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqe-eL-y4L">
@@ -106,28 +134,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="o8h-nT-pvt" firstAttribute="top" secondItem="Sox-so-rmz" secondAttribute="bottom" id="1Sl-dS-f9f"/>
                             <constraint firstItem="jn8-av-Hwf" firstAttribute="top" secondItem="nB7-yf-wxT" secondAttribute="top" id="2hP-ny-d13"/>
+                            <constraint firstItem="o8h-nT-pvt" firstAttribute="top" secondItem="jn8-av-Hwf" secondAttribute="bottom" id="9WY-Bl-YZJ"/>
                             <constraint firstItem="jn8-av-Hwf" firstAttribute="leading" secondItem="1yC-dP-ivE" secondAttribute="leading" id="9cv-Pv-Ll1"/>
-                            <constraint firstItem="Sox-so-rmz" firstAttribute="top" secondItem="jn8-av-Hwf" secondAttribute="bottom" id="Wr2-P2-sFt"/>
                             <constraint firstItem="1yC-dP-ivE" firstAttribute="trailing" secondItem="jn8-av-Hwf" secondAttribute="trailing" id="Y6q-xX-tCF"/>
-                            <constraint firstItem="Sox-so-rmz" firstAttribute="leading" secondItem="1yC-dP-ivE" secondAttribute="leading" id="ldu-Rw-chb"/>
                             <constraint firstItem="1yC-dP-ivE" firstAttribute="bottom" secondItem="o8h-nT-pvt" secondAttribute="bottom" id="mF8-F9-x9a"/>
                             <constraint firstItem="o8h-nT-pvt" firstAttribute="leading" secondItem="1yC-dP-ivE" secondAttribute="leading" id="oQW-63-SZ3"/>
                             <constraint firstItem="1yC-dP-ivE" firstAttribute="trailing" secondItem="o8h-nT-pvt" secondAttribute="trailing" id="sV8-uZ-cOo"/>
-                            <constraint firstItem="1yC-dP-ivE" firstAttribute="trailing" secondItem="Sox-so-rmz" secondAttribute="trailing" id="xc7-cu-dWZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1yC-dP-ivE"/>
                     </view>
                     <connections>
                         <outlet property="planetImageView" destination="jn8-av-Hwf" id="744-sh-9q0"/>
-                        <outlet property="planetInfoLabel" destination="Sox-so-rmz" id="pGr-bB-ny6"/>
                         <outlet property="planetMediaTableView" destination="o8h-nT-pvt" id="omq-nD-cNV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VNN-vt-ilQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="174" y="132"/>
+            <point key="canvasLocation" x="173.59999999999999" y="131.78410794602701"/>
         </scene>
         <!--ARViewController-->
         <scene sceneID="tXr-a1-R10">
