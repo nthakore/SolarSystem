@@ -18,6 +18,7 @@ class PlanetDetailsViewController: UIViewController {
     @IBOutlet weak var planetImageView: UIImageView!
     @IBOutlet weak var planetMediaTableView: UITableView!
     
+    var planetName: String?
     var planetInfoText: String?
     fileprivate weak var imagesCollectionView: UICollectionView?
     fileprivate weak var videosCollectionView: UICollectionView?
@@ -40,22 +41,25 @@ class PlanetDetailsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        WikipediaAPI.fetchInfoForPlanet(planet: "Mars") { [weak self] (planetInfoText) in
-            DispatchQueue.main.async {
-                self?.planetInfoText = planetInfoText
-                self?.planetMediaTableView.reloadData()
+        
+        if let planet = planetName {
+            WikipediaAPI.fetchInfoForPlanet(planet: planet) { [weak self] (planetInfoText) in
+                DispatchQueue.main.async {
+                    self?.planetInfoText = planetInfoText
+                    self?.planetMediaTableView.reloadData()
+                }
             }
-        }
-        NASAAPI.fetchPhotosForPlanet(planet: "Mars") { [weak self] (planetImages) in
-            self?.imageCellModels = planetImages
-            DispatchQueue.main.async {
-                self?.imagesCollectionView?.reloadData()
+            NASAAPI.fetchPhotosForPlanet(planet: planet) { [weak self] (planetImages) in
+                self?.imageCellModels = planetImages
+                DispatchQueue.main.async {
+                    self?.imagesCollectionView?.reloadData()
+                }
             }
-        }
-        NASAAPI.fetchVideosForPlanet(planet: "Mars") { [weak self] (planetVideos) in
-            self?.videoCellModels = planetVideos
-            DispatchQueue.main.async {
-                self?.videosCollectionView?.reloadData()
+            NASAAPI.fetchVideosForPlanet(planet: planet) { [weak self] (planetVideos) in
+                self?.videoCellModels = planetVideos
+                DispatchQueue.main.async {
+                    self?.videosCollectionView?.reloadData()
+                }
             }
         }
     }

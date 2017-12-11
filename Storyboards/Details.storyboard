@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,9 +25,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qk1-Dr-wIN">
-                                <rect key="frame" x="321" y="2" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qk1-Dr-wIN">
+                                <rect key="frame" x="313" y="20" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="X">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -41,7 +41,10 @@
                             <constraint firstItem="UD8-1j-3di" firstAttribute="leading" secondItem="OSM-yX-uBy" secondAttribute="leading" id="6dV-9Z-1Wr"/>
                             <constraint firstItem="OSM-yX-uBy" firstAttribute="trailing" secondItem="UD8-1j-3di" secondAttribute="trailing" id="6mL-Ji-Pus"/>
                             <constraint firstItem="OSM-yX-uBy" firstAttribute="bottom" secondItem="UD8-1j-3di" secondAttribute="bottom" id="H1y-YG-ff8"/>
+                            <constraint firstItem="OSM-yX-uBy" firstAttribute="trailing" secondItem="Qk1-Dr-wIN" secondAttribute="trailing" constant="16" id="Hc3-s9-WU4"/>
+                            <constraint firstItem="Qk1-Dr-wIN" firstAttribute="leading" secondItem="OSM-yX-uBy" secondAttribute="leading" constant="313" id="hPM-mS-mpX"/>
                             <constraint firstItem="UD8-1j-3di" firstAttribute="top" secondItem="OSM-yX-uBy" secondAttribute="top" constant="20" id="iOs-o3-OoN"/>
+                            <constraint firstItem="Qk1-Dr-wIN" firstAttribute="top" secondItem="OSM-yX-uBy" secondAttribute="top" id="zzL-HU-ehC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OSM-yX-uBy"/>
                     </view>
@@ -87,9 +90,8 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uga-u1-dQd" userLabel="Button">
-                                                    <rect key="frame" x="309" y="20" width="46" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uga-u1-dQd" userLabel="Button">
+                                                    <rect key="frame" x="313" y="20" width="46" height="30"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal" title="X">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -104,9 +106,12 @@
                                             <constraint firstItem="CcB-eb-A6y" firstAttribute="centerX" secondItem="3NL-n5-6LT" secondAttribute="centerX" id="5YM-Tz-UCX"/>
                                             <constraint firstItem="mLs-xI-Goi" firstAttribute="top" secondItem="3NL-n5-6LT" secondAttribute="top" id="Hct-1a-Atx"/>
                                             <constraint firstAttribute="bottom" secondItem="mLs-xI-Goi" secondAttribute="bottom" id="PAu-BQ-5ME"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="uga-u1-dQd" secondAttribute="trailing" constant="8" id="bOz-cO-7S6"/>
                                             <constraint firstItem="mLs-xI-Goi" firstAttribute="leading" secondItem="3NL-n5-6LT" secondAttribute="leading" id="gpX-t1-YCA"/>
+                                            <constraint firstItem="uga-u1-dQd" firstAttribute="top" secondItem="3NL-n5-6LT" secondAttribute="topMargin" constant="12" id="jTb-SR-enV"/>
                                             <constraint firstAttribute="bottom" secondItem="CcB-eb-A6y" secondAttribute="bottom" constant="55" id="jYZ-o5-9Li"/>
                                             <constraint firstAttribute="trailing" secondItem="mLs-xI-Goi" secondAttribute="trailing" id="jpa-ZS-Nwu"/>
+                                            <constraint firstItem="uga-u1-dQd" firstAttribute="leading" secondItem="3NL-n5-6LT" secondAttribute="leadingMargin" constant="305" id="lo6-49-Svw"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="imageDescription" destination="CcB-eb-A6y" id="G5g-QA-nF8"/>

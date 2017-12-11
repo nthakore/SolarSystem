@@ -133,6 +133,7 @@
 			children = (
 				C2984A601FB3573800F85B2F /* Details.storyboard */,
 				C2C943951FB0AE990041FC67 /* Main.storyboard */,
+				C2C9439A1FB0AE990041FC67 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -174,7 +175,6 @@
 				C2EE32381FB21ADA00E7D6EA /* PlanetMediaTableViewCell.swift */,
 				C2EE323A1FB21EEB00E7D6EA /* PlanetMediaCollectionViewCell.swift */,
 				C2C943981FB0AE990041FC67 /* Assets.xcassets */,
-				C2C9439A1FB0AE990041FC67 /* LaunchScreen.storyboard */,
 				C2C9439D1FB0AE990041FC67 /* Info.plist */,
 			);
 			name = SolarSystem;

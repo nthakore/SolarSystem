@@ -22,7 +22,7 @@ class NASAAPI: NSObject {
                         var numberOfItems = 5
                         var planetVideoModel: PlanetVideoCellModel = ("", "")
                         var planetVideos = [PlanetVideoCellModel]()
-                        for item in itemsArray[0...4] {
+                        for item in itemsArray[0...10] {
                             if let assetCollectionURLString = item["href"] as? String {
                                 if let encodedAssetCollectionURLString = assetCollectionURLString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let assetURL = URL(string: encodedAssetCollectionURLString) {
                                     Networking.executeDataTask(url: assetURL, networkCompletionHandler: { (assetsObject) in
