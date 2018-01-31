@@ -43,7 +43,13 @@ class PlanetDetailsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         if let planet = planetName {
-            WikipediaAPI.fetchInfoForPlanet(planet: planet) { [weak self] (planetInfoText) in
+//            WikipediaAPI.fetchInfoForPlanet(planet: planet) { [weak self] (planetInfoText) in
+//                DispatchQueue.main.async {
+//                    self?.planetInfoText = planetInfoText
+//                    self?.planetMediaTableView.reloadData()
+//                }
+//            }
+            WikipediaAPI.fetchTestInfoForPlanet(planet: planet) { [weak self] (planetInfoText) in
                 DispatchQueue.main.async {
                     self?.planetInfoText = planetInfoText
                     self?.planetMediaTableView.reloadData()

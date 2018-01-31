@@ -19,4 +19,26 @@ class Networking: NSObject {
         }
         task.resume()
     }
+    
+    static func executeTestDataTask(url: URL, networkCompletionHandler: ((WikiResponse?) -> Void)?) {
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let d = data {
+                let decoder = JSONDecoder()
+                
+                do {
+                    let wikiResponse = try decoder.decode(WikiResponse.self, from: d)
+                    networkCompletionHandler?(wikiResponse)
+                } catch(let err as NSError) {
+                    print("ERROR: \(err)")
+                }
+                
+                if let wikiResponse = try? decoder.decode(WikiResponse.self, from: d) {
+                    networkCompletionHandler?(wikiResponse)
+                }
+            } else {
+                networkCompletionHandler?(nil)
+            }
+        }
+        task.resume()
+    }
 }

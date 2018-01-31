@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct WikiResponse {
-    var batchComplete: String
-    var query: [NormalizedQuery]
+struct WikiResponse: Codable {
+    var batchComplete: String?
+    var query: Query
 }

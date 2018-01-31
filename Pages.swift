@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Pages {
+struct Pages: Codable {
     var page: PageNumber
 }

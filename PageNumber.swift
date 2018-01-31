@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PageNumber {
+struct PageNumber: Codable {
     var pageId: Int
     var ns: Int
     var title: String

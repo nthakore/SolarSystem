@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct NormalizedQuery {
+struct NormalizedQuery: Codable {
     var from: String
     var to: String
 }

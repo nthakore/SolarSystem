@@ -28,4 +28,19 @@ class WikipediaAPI: NSObject {
             })
         }
     }
+    
+    static func fetchTestInfoForPlanet(planet: String, fetchCompletionHandler: ((String?) -> Void)?) {
+        let urlString = WikipediaAPI.baseURL + "action=query&format=json&titles=\(planet)%20&prop=extracts&exintro&explaintext"
+        
+        if let url = URL(string: urlString) {
+            Networking.executeTestDataTask(url: url, networkCompletionHandler: { (wikiResponse) in
+                if let response = wikiResponse {
+                    let extract = response.query.pages.page.extract
+                    fetchCompletionHandler?(extract)
+                } else {
+                    fetchCompletionHandler?(nil)
+                }
+            })
+        }
+    }
 }
