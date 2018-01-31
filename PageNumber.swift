@@ -9,7 +9,7 @@
 import Foundation
 
 struct PageNumber: Codable {
-    var pageId: Int
+    var pageid: Int
     var ns: Int
     var title: String
     var extract: String
