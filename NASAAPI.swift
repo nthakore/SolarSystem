@@ -12,8 +12,8 @@ class NASAAPI: NSObject {
     fileprivate static let baseURL = "https://images-api.nasa.gov/search?"
     
     
-    static func fetchVideosForPlanet(planet: String, fetchCompletionHandler: (([PlanetVideoCellModel]) -> Void)?) {
-        let urlString = NASAAPI.baseURL + "q=\(planet)&media_type=video"
+    static func fetchVideosForPlanet(planet: Planet, fetchCompletionHandler: (([PlanetVideoCellModel]) -> Void)?) {
+        let urlString = NASAAPI.baseURL + "q=\(planet.displayName)&media_type=video"
         
         if let url = URL(string: urlString) {
             Networking.executeDataTask(url: url, networkCompletionHandler: { (responseObject) in
@@ -55,8 +55,8 @@ class NASAAPI: NSObject {
         }
     }
     
-    static func fetchPhotosForPlanet(planet: String, fetchCompletionHandler: (([PlanetImageCellModel]) -> Void)?) {
-        let urlString = NASAAPI.baseURL + "q=\(planet)&media_type=image"
+    static func fetchPhotosForPlanet(planet: Planet, fetchCompletionHandler: (([PlanetImageCellModel]) -> Void)?) {
+        let urlString = NASAAPI.baseURL + "q=\(planet.displayName)&media_type=image"
         
         if let url = URL(string: urlString) {
             Networking.executeDataTask(url: url, networkCompletionHandler: { (responseObject) in

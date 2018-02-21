@@ -18,7 +18,7 @@ class PlanetDetailsViewController: UIViewController {
     @IBOutlet weak var planetImageView: UIImageView!
     @IBOutlet weak var planetMediaTableView: UITableView!
     
-    var planetName: String?
+    var currentPlanet: Planet?
     var planetInfoText: String?
     fileprivate weak var imagesCollectionView: UICollectionView?
     fileprivate weak var videosCollectionView: UICollectionView?
@@ -42,14 +42,8 @@ class PlanetDetailsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let planet = planetName {
-//            WikipediaAPI.fetchInfoForPlanet(planet: planet) { [weak self] (planetInfoText) in
-//                DispatchQueue.main.async {
-//                    self?.planetInfoText = planetInfoText
-//                    self?.planetMediaTableView.reloadData()
-//                }
-//            }
-            WikipediaAPI.fetchTestInfoForPlanet(planet: planet) { [weak self] (planetInfoText) in
+        if let planet = currentPlanet {
+            WikipediaAPI.fetchInfoForPlanet(planet: planet) { [weak self] (planetInfoText) in
                 DispatchQueue.main.async {
                     self?.planetInfoText = planetInfoText
                     self?.planetMediaTableView.reloadData()
