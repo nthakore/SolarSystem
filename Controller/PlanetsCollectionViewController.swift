@@ -10,6 +10,7 @@ import UIKit
 
 class PlanetsCollectionViewController: UIViewController {
     @IBOutlet weak var planetsCollectionView: UICollectionView!
+    @IBOutlet weak var videoView: UIView!
     
     fileprivate var itemsForCollectionView: [Planet] = [.mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune]
     
@@ -44,6 +45,7 @@ extension PlanetsCollectionViewController: UICollectionViewDataSource {
         
         let planet = itemsForCollectionView[indexPath.item]
         cell.planetNameLabel.text = planet.displayName
+        cell.planetImage.image = UIImage(named: "\(planet.displayName)")
         
         return cell
     }

@@ -10,4 +10,5 @@ import UIKit
 
 class PlanetsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var planetNameLabel: UILabel!
+    @IBOutlet weak var planetImage: UIImageView!
 }
