@@ -24,6 +24,7 @@
 		C2984A651FB3654E00F85B2F /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2984A641FB3654E00F85B2F /* PhotoViewController.swift */; };
 		C2984A671FB366F600F85B2F /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2984A661FB366F600F85B2F /* PhotoCollectionViewCell.swift */; };
 		C2C44EA72059EFB500AF61DF /* Untitled.mov in Resources */ = {isa = PBXBuildFile; fileRef = C2C44EA62059EFB500AF61DF /* Untitled.mov */; };
+		C2C44EA92059F24400AF61DF /* OnboardingVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C2C44EA82059F1EE00AF61DF /* OnboardingVideo.mp4 */; };
 		C2C943901FB0AE990041FC67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C9438F1FB0AE990041FC67 /* AppDelegate.swift */; };
 		C2C943921FB0AE990041FC67 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C2C943911FB0AE990041FC67 /* art.scnassets */; };
 		C2C943941FB0AE990041FC67 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C943931FB0AE990041FC67 /* ARViewController.swift */; };
@@ -57,6 +58,7 @@
 		C2984A641FB3654E00F85B2F /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		C2984A661FB366F600F85B2F /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		C2C44EA62059EFB500AF61DF /* Untitled.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Untitled.mov; sourceTree = "<group>"; };
+		C2C44EA82059F1EE00AF61DF /* OnboardingVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = OnboardingVideo.mp4; sourceTree = "<group>"; };
 		C2C9438C1FB0AE990041FC67 /* SolarSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SolarSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C9438F1FB0AE990041FC67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2C943911FB0AE990041FC67 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				C2C44EA62059EFB500AF61DF /* Untitled.mov */,
+				C2C44EA82059F1EE00AF61DF /* OnboardingVideo.mp4 */,
 				C23870C52059D6090001A029 /* shootingStar.mov */,
 			);
 			path = Resources;
@@ -306,6 +309,7 @@
 				C23870C62059D6090001A029 /* shootingStar.mov in Resources */,
 				C2C943921FB0AE990041FC67 /* art.scnassets in Resources */,
 				C2C9439C1FB0AE990041FC67 /* LaunchScreen.storyboard in Resources */,
+				C2C44EA92059F24400AF61DF /* OnboardingVideo.mp4 in Resources */,
 				C2C943991FB0AE990041FC67 /* Assets.xcassets in Resources */,
 				C2C943971FB0AE990041FC67 /* Main.storyboard in Resources */,
 				C2C44EA72059EFB500AF61DF /* Untitled.mov in Resources */,

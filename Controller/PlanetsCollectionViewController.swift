@@ -27,7 +27,7 @@ class PlanetsCollectionViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        playVideoLayer(fileName: "Untitled", fileExtension: "mov")
+        playVideoLayer(fileName: "OnboardingVideo", fileExtension: "mp4")
     }
     
     func playVideoLayer(fileName: String, fileExtension: String) {
@@ -38,16 +38,12 @@ class PlanetsCollectionViewController: UIViewController {
             let pathURL = URL(string: path) {
             player = AVPlayer(url: pathURL)
             
-            let playerController = AVPlayerViewController()
-            playerController.player = player
-            present(playerController, animated: true, completion: nil)
-            
-//            playerLayer = AVPlayerLayer(player: player)
-//            playerLayer?.frame = videoView.bounds
-//            playerLayer?.videoGravity = .resizeAspectFill
-//            playerLayer?.repeatCount = .infinity
-//            videoView.layer.insertSublayer(playerLayer!, at: 0)
-//            player?.play()
+            playerLayer = AVPlayerLayer(player: player)
+            playerLayer?.frame = videoView.bounds
+            playerLayer?.videoGravity = .resizeAspectFill
+            playerLayer?.repeatCount = .infinity
+            videoView.layer.insertSublayer(playerLayer!, at: 0)
+            player?.play()
         }
     }
 }
