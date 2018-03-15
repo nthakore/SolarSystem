@@ -7,18 +7,48 @@
 //
 
 import UIKit
+import AVKit
 
 class PlanetsCollectionViewController: UIViewController {
     @IBOutlet weak var planetsCollectionView: UICollectionView!
     @IBOutlet weak var videoView: UIView!
     
     fileprivate var itemsForCollectionView: [Planet] = [.mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune]
+    var player: AVPlayer?
+    var playerLayer: AVPlayerLayer?
+    var playerItem: AVPlayerItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         planetsCollectionView.dataSource = self
         planetsCollectionView.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        playVideoLayer(fileName: "Untitled", fileExtension: "mov")
+    }
+    
+    func playVideoLayer(fileName: String, fileExtension: String) {
+//        planetsCollectionView.isHidden = true
+        videoView.backgroundColor = .red
+        
+        if let path = Bundle.main.path(forResource: fileName, ofType: fileExtension),
+            let pathURL = URL(string: path) {
+            player = AVPlayer(url: pathURL)
+            
+            let playerController = AVPlayerViewController()
+            playerController.player = player
+            present(playerController, animated: true, completion: nil)
+            
+//            playerLayer = AVPlayerLayer(player: player)
+//            playerLayer?.frame = videoView.bounds
+//            playerLayer?.videoGravity = .resizeAspectFill
+//            playerLayer?.repeatCount = .infinity
+//            videoView.layer.insertSublayer(playerLayer!, at: 0)
+//            player?.play()
+        }
     }
 }
 

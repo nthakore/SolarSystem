@@ -188,12 +188,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starry sky" translatesAutoresizingMaskIntoConstraints="NO" id="51Q-Bq-Zqw">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ivd-Zn-CJ4">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="a9Q-Mj-TPO">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
@@ -244,15 +241,11 @@
                             <constraint firstItem="ivd-Zn-CJ4" firstAttribute="leading" secondItem="if7-P1-AB0" secondAttribute="leading" id="0Dq-jB-FxL"/>
                             <constraint firstItem="a9Q-Mj-TPO" firstAttribute="bottom" secondItem="if7-P1-AB0" secondAttribute="bottom" id="91J-ob-qne"/>
                             <constraint firstItem="a9Q-Mj-TPO" firstAttribute="trailing" secondItem="if7-P1-AB0" secondAttribute="trailing" id="HdC-6R-eDx"/>
-                            <constraint firstItem="51Q-Bq-Zqw" firstAttribute="top" secondItem="czg-V1-Z7f" secondAttribute="top" id="UxG-ci-raL"/>
                             <constraint firstItem="a9Q-Mj-TPO" firstAttribute="top" secondItem="czg-V1-Z7f" secondAttribute="top" id="Wpz-jq-i9t"/>
-                            <constraint firstItem="51Q-Bq-Zqw" firstAttribute="leading" secondItem="if7-P1-AB0" secondAttribute="leading" id="f40-Qp-pAm"/>
                             <constraint firstItem="if7-P1-AB0" firstAttribute="trailing" secondItem="ivd-Zn-CJ4" secondAttribute="trailing" id="kpB-Xm-C7w"/>
                             <constraint firstItem="a9Q-Mj-TPO" firstAttribute="leading" secondItem="if7-P1-AB0" secondAttribute="leading" id="ngE-1T-cOE"/>
-                            <constraint firstItem="51Q-Bq-Zqw" firstAttribute="bottom" secondItem="if7-P1-AB0" secondAttribute="bottom" id="qqt-dU-N1g"/>
                             <constraint firstItem="ivd-Zn-CJ4" firstAttribute="top" secondItem="czg-V1-Z7f" secondAttribute="top" id="ujM-M2-3e7"/>
                             <constraint firstItem="if7-P1-AB0" firstAttribute="bottom" secondItem="ivd-Zn-CJ4" secondAttribute="bottom" id="uy1-Yc-or3"/>
-                            <constraint firstItem="51Q-Bq-Zqw" firstAttribute="trailing" secondItem="if7-P1-AB0" secondAttribute="trailing" id="xwo-WV-bKX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="if7-P1-AB0"/>
                     </view>
@@ -289,6 +282,5 @@
     </scenes>
     <resources>
         <image name="smiley" width="1200" height="1200"/>
-        <image name="starry sky" width="1530" height="1200"/>
     </resources>
 </document>
