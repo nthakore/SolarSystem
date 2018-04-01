@@ -27,24 +27,7 @@ class PlanetsCollectionViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        playVideoLayer(fileName: "OnboardingVideo", fileExtension: "mp4")
-    }
-    
-    func playVideoLayer(fileName: String, fileExtension: String) {
-//        planetsCollectionView.isHidden = true
-        videoView.backgroundColor = .red
-        
-        if let path = Bundle.main.path(forResource: fileName, ofType: fileExtension),
-            let pathURL = URL(string: path) {
-            player = AVPlayer(url: pathURL)
-            
-            playerLayer = AVPlayerLayer(player: player)
-            playerLayer?.frame = videoView.bounds
-            playerLayer?.videoGravity = .resizeAspectFill
-            playerLayer?.repeatCount = .infinity
-            videoView.layer.insertSublayer(playerLayer!, at: 0)
-            player?.play()
-        }
+        videoView.addVideoLayer(fileName: "shootingStar", fileExtension: "mov")
     }
 }
 
@@ -71,7 +54,7 @@ extension PlanetsCollectionViewController: UICollectionViewDataSource {
         
         let planet = itemsForCollectionView[indexPath.item]
         cell.planetNameLabel.text = planet.displayName
-        cell.planetImage.image = UIImage(named: "\(planet.displayName)")
+        cell.planetImage.image = planet.planetImage
         
         return cell
     }

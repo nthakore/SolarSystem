@@ -25,6 +25,13 @@ class PlanetMediaCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        let sideLength = contentView.frame.size.width
+        contentView.layer.cornerRadius = sideLength / 4.0
+        contentView.layer.masksToBounds = true
+    }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         imageView.image = nil

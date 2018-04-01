@@ -31,6 +31,8 @@ class PlanetDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        planetImageView.image = currentPlanet?.planetImage
     
         planetMediaTableView.delegate = self
         planetMediaTableView.dataSource = self
@@ -75,12 +77,23 @@ extension PlanetDetailsViewController: UITableViewDelegate {
                     infoController.planetInfo = planetInfoText
                     present(infoController, animated: true, completion: nil)
                 }
-            case .planetMediaImages:
-                break
-            case .planetMediaVideos:
+            default:
                 break
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let defaultHeight = CGFloat(150)
+        if let row = PlanetMediaTableViewRow(rawValue: indexPath.row) {
+            switch row {
+            case .planetInfo:
+                return defaultHeight + 150
+            default:
+                return defaultHeight
+            }
+        }
+        return defaultHeight
     }
 }
 

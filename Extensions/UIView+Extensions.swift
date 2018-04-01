@@ -11,17 +11,20 @@ import AVFoundation
 
 extension UIView {
     func addVideoLayer(fileName: String, fileExtension: String) {
-        if let path = Bundle.main.path(forResource: fileName, ofType: fileExtension),
-            let pathURL = URL(string: path) {
+        if let path = Bundle.main.path(forResource: fileName, ofType: fileExtension) {
+            let pathURL = URL(fileURLWithPath: path)
             let player = AVPlayer(url: pathURL)
             let playerLayer = AVPlayerLayer(player: player)
-            playerLayer.frame = bounds
-//            playerLayer.position = CGPoint.zero
+            playerLayer.frame = frame
             playerLayer.videoGravity = .resizeAspectFill
-            playerLayer.repeatCount = .infinity
-//            layer.addSublayer(playerLayer)
-            layer.insertSublayer(playerLayer, at: 0)
+            layer.addSublayer(playerLayer)
             player.play()
+            
+            // Repeat animation forever
+            NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main, using: { (notification) in
+                player.seek(to: kCMTimeZero)
+                player.play()
+            })
         }
     }
 }

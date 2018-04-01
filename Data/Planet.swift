@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum Planet {
     case mercury
@@ -36,6 +37,27 @@ enum Planet {
             return "Uranus"
         case .neptune:
             return "Neptune"
+        }
+    }
+    
+    var planetImage: UIImage {
+        switch self {
+        case .mercury:
+            return #imageLiteral(resourceName: "Mercury")
+        case .venus:
+            return #imageLiteral(resourceName: "Venus")
+        case .earth:
+            return #imageLiteral(resourceName: "Earth")
+        case .mars:
+            return #imageLiteral(resourceName: "Mars")
+        case .jupiter:
+            return #imageLiteral(resourceName: "Jupiter")
+        case .saturn:
+            return #imageLiteral(resourceName: "Saturn")
+        case .uranus:
+            return #imageLiteral(resourceName: "Uranus")
+        case .neptune:
+            return #imageLiteral(resourceName: "Neptune")
         }
     }
 }
