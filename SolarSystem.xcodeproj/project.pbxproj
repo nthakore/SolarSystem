@@ -30,6 +30,7 @@
 		C2C9439C1FB0AE990041FC67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2C9439A1FB0AE990041FC67 /* LaunchScreen.storyboard */; };
 		C2C943A41FB0BAB60041FC67 /* PlanetsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C943A31FB0BAB60041FC67 /* PlanetsCollectionViewController.swift */; };
 		C2C943A61FB0C7F30041FC67 /* PlanetsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C943A51FB0C7F30041FC67 /* PlanetsCollectionViewCell.swift */; };
+		C2CF6E5D207E629C002EBE41 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CF6E5C207E629C002EBE41 /* PopAnimator.swift */; };
 		C2DBCB381FBCC18A003A8B82 /* WikipediaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DBCB371FBCC18A003A8B82 /* WikipediaAPI.swift */; };
 		C2EE32351FB20AD000E7D6EA /* PlanetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EE32341FB20AD000E7D6EA /* PlanetDetailsViewController.swift */; };
 		C2EE32391FB21ADA00E7D6EA /* PlanetMediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EE32381FB21ADA00E7D6EA /* PlanetMediaTableViewCell.swift */; };
@@ -63,6 +64,7 @@
 		C2C9439D1FB0AE990041FC67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2C943A31FB0BAB60041FC67 /* PlanetsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsCollectionViewController.swift; sourceTree = "<group>"; };
 		C2C943A51FB0C7F30041FC67 /* PlanetsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsCollectionViewCell.swift; sourceTree = "<group>"; };
+		C2CF6E5C207E629C002EBE41 /* PopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
 		C2DBCB371FBCC18A003A8B82 /* WikipediaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaAPI.swift; sourceTree = "<group>"; };
 		C2EE32341FB20AD000E7D6EA /* PlanetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailsViewController.swift; sourceTree = "<group>"; };
 		C2EE32381FB21ADA00E7D6EA /* PlanetMediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetMediaTableViewCell.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 		C2C9438E1FB0AE990041FC67 /* SolarSystem */ = {
 			isa = PBXGroup;
 			children = (
+				C2CF6E5C207E629C002EBE41 /* PopAnimator.swift */,
 				C23870C12059D37E0001A029 /* Data */,
 				C23870BF2059D2F30001A029 /* Presentation */,
 				C23870BE2059D2D40001A029 /* Controller */,
@@ -357,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2CF6E5D207E629C002EBE41 /* PopAnimator.swift in Sources */,
 				C223B2661FBE358F00398211 /* WikiResponse.swift in Sources */,
 				C2FE4CC91FDF71090013EF43 /* Query.swift in Sources */,
 				C2C943A61FB0C7F30041FC67 /* PlanetsCollectionViewCell.swift in Sources */,

@@ -10,8 +10,8 @@ import UIKit
 
 class PlanetsCollectionViewController: UIViewController {
     @IBOutlet weak var planetsCollectionView: UICollectionView!
-    
     fileprivate var itemsForCollectionView: [Planet] = [.mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune]
+    let transition = PopAnimator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,7 @@ extension PlanetsCollectionViewController: UICollectionViewDelegate {
         if let detailsController = storyboard.instantiateViewController(withIdentifier: "PlanetDetailsViewController") as? PlanetDetailsViewController {
             let planet = itemsForCollectionView[indexPath.item]
             detailsController.currentPlanet = planet
+            detailsController.transitioningDelegate = self
             present(detailsController, animated: true, completion: nil)
         }
     }
@@ -47,5 +48,15 @@ extension PlanetsCollectionViewController: UICollectionViewDataSource {
         cell.planetImage.image = planet.planetImage
         
         return cell
+    }
+}
+
+extension PlanetsCollectionViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return transition
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return nil
     }
 }
