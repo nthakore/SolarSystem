@@ -7,27 +7,17 @@
 //
 
 import UIKit
-import AVKit
 
 class PlanetsCollectionViewController: UIViewController {
     @IBOutlet weak var planetsCollectionView: UICollectionView!
-    @IBOutlet weak var videoView: UIView!
     
     fileprivate var itemsForCollectionView: [Planet] = [.mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune]
-    var player: AVPlayer?
-    var playerLayer: AVPlayerLayer?
-    var playerItem: AVPlayerItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         planetsCollectionView.dataSource = self
         planetsCollectionView.delegate = self
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        videoView.addVideoLayer(fileName: "shootingStar", fileExtension: "mov")
     }
 }
 
