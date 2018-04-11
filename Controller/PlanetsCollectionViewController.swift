@@ -23,11 +23,14 @@ class PlanetsCollectionViewController: UIViewController {
 
 extension PlanetsCollectionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let rect = collectionView.cellForItem(at: indexPath)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let detailsController = storyboard.instantiateViewController(withIdentifier: "PlanetDetailsViewController") as? PlanetDetailsViewController {
             let planet = itemsForCollectionView[indexPath.item]
             detailsController.currentPlanet = planet
             detailsController.transitioningDelegate = self
+            transition.originFrame = rect!.superview!.convert(rect!.frame, to: nil)
+            transition.presenting = true
             present(detailsController, animated: true, completion: nil)
         }
     }
@@ -57,6 +60,7 @@ extension PlanetsCollectionViewController: UIViewControllerTransitioningDelegate
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return nil
+        transition.presenting = false
+        return transition
     }
 }
