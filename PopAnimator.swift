@@ -23,7 +23,14 @@ class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let toView = transitionContext.view(forKey: .to)!
         let detailsView = presenting ? toView : transitionContext.view(forKey: .from)!
         
-        let initialFrame = presenting ? originFrame : detailsView.frame
+        var initialFrame = presenting ? originFrame : detailsView.frame
+        
+        // I added this part --------------
+        if let toVC = transitionContext.viewController(forKey: .from) as? PlanetDetailsViewController {
+            initialFrame = toVC.planetImageView.frame
+        }
+        //------------------------
+
         let finalFrame = presenting ? detailsView.frame : originFrame
         
         let xScaleFactor = presenting ? initialFrame.width / finalFrame.width : finalFrame.width / initialFrame.width

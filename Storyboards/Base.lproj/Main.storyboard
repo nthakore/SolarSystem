@@ -18,20 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starry sky" translatesAutoresizingMaskIntoConstraints="NO" id="MBM-gP-UZd">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="439"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="439" id="lHc-cn-MIy"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mercury" translatesAutoresizingMaskIntoConstraints="NO" id="jn8-av-Hwf">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="439"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="439" id="ktp-Uf-RZk"/>
-                                </constraints>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o8h-nT-pvt">
-                                <rect key="frame" x="0.0" y="439" width="375" height="339"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlanetMediaTableViewCell" id="OTu-Ll-nX4" userLabel="PlanetMediaTableViewCell" customClass="PlanetMediaTableViewCell" customModule="SolarSystem" customModuleProvider="target">
@@ -132,33 +120,44 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqe-eL-y4L">
-                                <rect key="frame" x="313" y="44" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="X">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starry sky" translatesAutoresizingMaskIntoConstraints="NO" id="MBM-gP-UZd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="439"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="439" id="lHc-cn-MIy"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mercury" translatesAutoresizingMaskIntoConstraints="NO" id="jn8-av-Hwf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="439"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="439" id="ktp-Uf-RZk"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KT9-cr-jrK">
+                                <rect key="frame" x="319" y="44" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="JG4-Qe-0Nk"/>
+                                    <constraint firstAttribute="width" constant="40" id="lxf-k2-feo"/>
+                                </constraints>
+                                <state key="normal" image="Close button"/>
                                 <connections>
-                                    <action selector="closeButton:" destination="GTl-wZ-ewu" eventType="touchUpInside" id="KGj-D6-qG4"/>
+                                    <action selector="closeButton:" destination="GTl-wZ-ewu" eventType="touchUpInside" id="cc6-Ey-hMk"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jn8-av-Hwf" firstAttribute="top" secondItem="nB7-yf-wxT" secondAttribute="top" id="2hP-ny-d13"/>
-                            <constraint firstItem="o8h-nT-pvt" firstAttribute="top" secondItem="jn8-av-Hwf" secondAttribute="bottom" id="9WY-Bl-YZJ"/>
                             <constraint firstItem="jn8-av-Hwf" firstAttribute="leading" secondItem="1yC-dP-ivE" secondAttribute="leading" id="9cv-Pv-Ll1"/>
                             <constraint firstItem="MBM-gP-UZd" firstAttribute="trailing" secondItem="1yC-dP-ivE" secondAttribute="trailing" id="J4D-qO-5Wf"/>
-                            <constraint firstItem="tqe-eL-y4L" firstAttribute="top" secondItem="1yC-dP-ivE" secondAttribute="top" id="PEH-Vg-aKx"/>
                             <constraint firstItem="1yC-dP-ivE" firstAttribute="trailing" secondItem="jn8-av-Hwf" secondAttribute="trailing" id="Y6q-xX-tCF"/>
-                            <constraint firstItem="o8h-nT-pvt" firstAttribute="top" secondItem="MBM-gP-UZd" secondAttribute="bottom" id="gYF-s0-ek3"/>
-                            <constraint firstItem="tqe-eL-y4L" firstAttribute="leading" secondItem="1yC-dP-ivE" secondAttribute="leading" constant="313" id="lSh-zD-73h"/>
-                            <constraint firstItem="1yC-dP-ivE" firstAttribute="bottom" secondItem="o8h-nT-pvt" secondAttribute="bottom" id="mF8-F9-x9a"/>
+                            <constraint firstAttribute="bottom" secondItem="o8h-nT-pvt" secondAttribute="bottom" id="mF8-F9-x9a"/>
                             <constraint firstItem="o8h-nT-pvt" firstAttribute="leading" secondItem="1yC-dP-ivE" secondAttribute="leading" id="oQW-63-SZ3"/>
+                            <constraint firstItem="1yC-dP-ivE" firstAttribute="trailing" secondItem="KT9-cr-jrK" secondAttribute="trailing" constant="16" id="piQ-Ut-R5O"/>
                             <constraint firstItem="MBM-gP-UZd" firstAttribute="leading" secondItem="1yC-dP-ivE" secondAttribute="leading" id="q79-g5-BZr"/>
                             <constraint firstItem="1yC-dP-ivE" firstAttribute="trailing" secondItem="o8h-nT-pvt" secondAttribute="trailing" id="sV8-uZ-cOo"/>
+                            <constraint firstItem="KT9-cr-jrK" firstAttribute="top" secondItem="1yC-dP-ivE" secondAttribute="top" id="vlc-en-cLf"/>
                             <constraint firstItem="MBM-gP-UZd" firstAttribute="top" secondItem="nB7-yf-wxT" secondAttribute="top" id="yEo-6x-zYp"/>
-                            <constraint firstItem="1yC-dP-ivE" firstAttribute="trailing" secondItem="tqe-eL-y4L" secondAttribute="trailing" constant="16" id="zKc-nH-YKQ"/>
+                            <constraint firstItem="o8h-nT-pvt" firstAttribute="top" secondItem="nB7-yf-wxT" secondAttribute="top" id="zCa-ea-IAY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1yC-dP-ivE"/>
                     </view>
@@ -289,6 +288,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Close button" width="600" height="600"/>
         <image name="Mercury" width="800" height="800"/>
         <image name="starry sky" width="1530" height="1200"/>
     </resources>

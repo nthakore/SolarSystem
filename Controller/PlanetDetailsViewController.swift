@@ -24,7 +24,7 @@ class PlanetDetailsViewController: UIViewController {
     fileprivate weak var videosCollectionView: UICollectionView?
     fileprivate var imageCellModels = [PlanetImageCellModel]()
     fileprivate var videoCellModels = [PlanetVideoCellModel]()
-    
+
     @IBAction func closeButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -64,6 +64,12 @@ class PlanetDetailsViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        planetMediaTableView.setContentOffset(CGPoint(x: 0, y: -planetImageView.frame.size.height), animated: false)
     }
 }
 
@@ -132,6 +138,10 @@ extension PlanetDetailsViewController: UITableViewDataSource {
         }
         return tableViewCell
     }
+}
+
+extension PlanetDetailsViewController: UIScrollViewDelegate {
+    
 }
 
 extension PlanetDetailsViewController: UICollectionViewDelegate {
