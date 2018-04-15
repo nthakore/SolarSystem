@@ -162,7 +162,10 @@
                         <viewLayoutGuide key="safeArea" id="1yC-dP-ivE"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundImageView" destination="MBM-gP-UZd" id="U1T-lW-3WM"/>
+                        <outlet property="backgroundImageViewHeightConstraint" destination="lHc-cn-MIy" id="ufF-2N-sG9"/>
                         <outlet property="planetImageView" destination="jn8-av-Hwf" id="744-sh-9q0"/>
+                        <outlet property="planetImageViewHeightConstraint" destination="ktp-Uf-RZk" id="qR6-cb-yby"/>
                         <outlet property="planetMediaTableView" destination="o8h-nT-pvt" id="omq-nD-cNV"/>
                     </connections>
                 </viewController>

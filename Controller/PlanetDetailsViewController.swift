@@ -16,7 +16,10 @@ enum PlanetMediaTableViewRow: Int {
 
 class PlanetDetailsViewController: UIViewController {
     @IBOutlet weak var planetImageView: UIImageView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var planetMediaTableView: UITableView!
+    @IBOutlet weak var backgroundImageViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var planetImageViewHeightConstraint: NSLayoutConstraint!
     
     var currentPlanet: Planet?
     var planetInfoText: String?
@@ -24,6 +27,8 @@ class PlanetDetailsViewController: UIViewController {
     fileprivate weak var videosCollectionView: UICollectionView?
     fileprivate var imageCellModels = [PlanetImageCellModel]()
     fileprivate var videoCellModels = [PlanetVideoCellModel]()
+    fileprivate var previousScrollViewContentOffset = CGFloat(0)
+    fileprivate var didSetInitialTableViewOffset = false
 
     @IBAction func closeButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -69,7 +74,17 @@ class PlanetDetailsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        planetMediaTableView.setContentOffset(CGPoint(x: 0, y: -planetImageView.frame.size.height), animated: false)
+//        planetMediaTableView.setContentOffset(CGPoint(x: 0, y: -planetImageView.frame.size.height), animated: false)
+//        planetMediaTableView.contentOffset = CGPoint(x: 0, y: -(1 * planetImageView.frame.size.height))
+
+        didSetInitialTableViewOffset = true
+    }
+    
+    func adjustImageView(heightAdjustment: CGFloat) {
+        planetImageViewHeightConstraint.constant += heightAdjustment
+        backgroundImageViewHeightConstraint.constant += heightAdjustment
+        
+        view.setNeedsLayout()
     }
 }
 
@@ -141,7 +156,15 @@ extension PlanetDetailsViewController: UITableViewDataSource {
 }
 
 extension PlanetDetailsViewController: UIScrollViewDelegate {
-    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (scrollView == planetMediaTableView) && didSetInitialTableViewOffset {
+            let scrollDelta = -(scrollView.contentOffset.y - previousScrollViewContentOffset)
+            adjustImageView(heightAdjustment: scrollDelta)
+            
+            previousScrollViewContentOffset = scrollView.contentOffset.y
+            print("\(scrollDelta)")
+        }
+    }
 }
 
 extension PlanetDetailsViewController: UICollectionViewDelegate {
