@@ -74,9 +74,7 @@ class PlanetDetailsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-//        planetMediaTableView.setContentOffset(CGPoint(x: 0, y: -planetImageView.frame.size.height), animated: false)
-//        planetMediaTableView.contentOffset = CGPoint(x: 0, y: -(1 * planetImageView.frame.size.height))
-
+        planetMediaTableView.contentOffset = CGPoint(x: 0, y: -planetImageView.frame.size.height)
         didSetInitialTableViewOffset = true
     }
     
@@ -120,7 +118,7 @@ extension PlanetDetailsViewController: UITableViewDelegate {
 
 extension PlanetDetailsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 13
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -151,6 +149,7 @@ extension PlanetDetailsViewController: UITableViewDataSource {
                 tableViewCell = cell
             }
         }
+
         return tableViewCell
     }
 }

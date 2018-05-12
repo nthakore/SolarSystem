@@ -14,67 +14,129 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     
+    var solarSystemNode: SCNNode?
+    
+    let durationDict: [String: TimeInterval] = ["mercuryParentNode": 1.0]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set the view's delegate
-        sceneView.delegate = self
-        
-        // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
-        
-        // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-        
-        // Set the scene to the view
-        sceneView.scene = scene
+        let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch(recognizer:)))
+        sceneView.addGestureRecognizer(pinchGestureRecognizer)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
-
-        // Run the view's session
         sceneView.session.run(configuration)
+        
+        
+        if let solarSystemScene = SCNScene(named: "SceneKit Scene.scn") {
+            if let solarSystemParentNode = solarSystemScene.rootNode.childNode(withName: "solarSystem", recursively: false) {
+                sceneView.scene.rootNode.addChildNode(solarSystemParentNode)
+                solarSystemParentNode.position = SCNVector3(0, 0, -2.0)
+                solarSystemNode = solarSystemParentNode
+                
+                for node in solarSystemParentNode.childNodes {
+                    if let planet = Planet(planetParentNodeName: node.name) {
+                        let orbitRotationAction = SCNAction.rotateBy(x: 0, y: .pi, z: 0, duration: planet.orbitDuration)
+                        let orbitRotateForeverAction = SCNAction.repeatForever(orbitRotationAction)
+                        node.runAction(orbitRotateForeverAction)
+                        
+                        let planetRotationAction = SCNAction.rotateBy(x: 0, y: .pi, z: 0, duration: planet.planetRotationDuration)
+                        let planetRotateForeverAction = SCNAction.repeatForever(planetRotationAction)
+                        node.childNodes.first?.runAction(planetRotateForeverAction)
+
+                    }
+                }
+            }
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        // Pause the view's session
         sceneView.session.pause()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
-    }
-
-    // MARK: - ARSCNViewDelegate
-    
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-     
-        return node
-    }
-*/
-    
-    func session(_ session: ARSession, didFailWithError error: Error) {
-        // Present an error message to the user
-        
-    }
-    
-    func sessionWasInterrupted(_ session: ARSession) {
-        // Inform the user that the session has been interrupted, for example, by presenting an overlay
-        
-    }
-    
-    func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required
-        
+    @objc func handlePinch(recognizer: UIPinchGestureRecognizer) {
+        if let node = solarSystemNode {
+            if recognizer.state == .changed {
+                let pinchScaleX = Float(recognizer.scale) * node.scale.x
+                let pinchScaleY = Float(recognizer.scale) * node.scale.y
+                let pinchScaleZ = Float(recognizer.scale) * node.scale.z
+                node.scale = SCNVector3(pinchScaleX, pinchScaleY, pinchScaleZ)
+                recognizer.scale = 1
+            }
+        }
     }
 }
+
+extension Planet {
+    init?(planetParentNodeName: String?) {
+        switch planetParentNodeName {
+        case "mercuryParentNode":
+            self = .mercury
+        case "venusParentNode":
+            self = .venus
+        case "earthParentNode":
+            self = .earth
+        case "marsParentNode":
+            self = .mars
+        case "jupiterParentNode":
+            self = .jupiter
+        case "saturnParentNode":
+            self = .saturn
+        case "uranusParentNode":
+            self = .uranus
+        case "neptuneParentNode":
+            self = .neptune
+        default:
+            return nil
+        }
+    }
+    
+    var orbitDuration: TimeInterval {
+        switch self {
+        case .mercury:
+            return 1
+        case .venus:
+            return 2
+        case .earth:
+            return 3
+        case .mars:
+            return 4
+        case .jupiter:
+            return 5
+        case .saturn:
+            return 6
+        case .uranus:
+            return 7
+        case .neptune:
+            return 8
+        }
+    }
+    
+    var planetRotationDuration: TimeInterval {
+        switch self {
+        case .mercury:
+            return 1
+        case .venus:
+            return 2
+        case .earth:
+            return 3
+        case .mars:
+            return 4
+        case .jupiter:
+            return 5
+        case .saturn:
+            return 6
+        case .uranus:
+            return 7
+        case .neptune:
+            return 8
+        }
+    }
+}
+

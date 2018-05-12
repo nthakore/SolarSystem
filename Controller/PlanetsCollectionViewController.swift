@@ -19,6 +19,10 @@ class PlanetsCollectionViewController: UIViewController {
         planetsCollectionView.dataSource = self
         planetsCollectionView.delegate = self
     }
+    
+    override func viewDidLayoutSubviews() {
+        print("\(self.view.frame)")
+    }
 }
 
 extension PlanetsCollectionViewController: UICollectionViewDelegate {
@@ -50,7 +54,23 @@ extension PlanetsCollectionViewController: UICollectionViewDataSource {
         cell.planetNameLabel.text = planet.displayName
         cell.planetImage.image = planet.planetImage
         
+        cell.backgroundColor = .red
+        
         return cell
+    }
+}
+
+extension PlanetsCollectionViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var size = CGSize(width: 120, height: 120)
+        
+        let spacing = CGFloat(16)
+        let cvWidth = collectionView.bounds.size.width
+        let remainingSpace = cvWidth - (2 * spacing)
+        let cellSize = remainingSpace
+        size = CGSize(width: cellSize, height: cellSize)
+
+        return size
     }
 }
 

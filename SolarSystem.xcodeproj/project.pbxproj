@@ -16,6 +16,17 @@
 		C223B26A1FBE364800398211 /* Pages.swift in Sources */ = {isa = PBXBuildFile; fileRef = C223B2691FBE364800398211 /* Pages.swift */; };
 		C223B26C1FBE367500398211 /* PageNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C223B26B1FBE367500398211 /* PageNumber.swift */; };
 		C23870C32059D4F50001A029 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23870C22059D4F50001A029 /* UIView+Extensions.swift */; };
+		C25F9D8A20A79A0F0003E4E1 /* marsTexture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C25F9D7F20A79A0E0003E4E1 /* marsTexture.jpg */; };
+		C25F9D8B20A79A0F0003E4E1 /* venusTexture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C25F9D8020A79A0E0003E4E1 /* venusTexture.jpg */; };
+		C25F9D8C20A79A0F0003E4E1 /* sunTexture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C25F9D8120A79A0E0003E4E1 /* sunTexture.jpg */; };
+		C25F9D8D20A79A0F0003E4E1 /* saturnTexture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C25F9D8220A79A0E0003E4E1 /* saturnTexture.jpg */; };
+		C25F9D8E20A79A0F0003E4E1 /* saturnRingTexture2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C25F9D8320A79A0F0003E4E1 /* saturnRingTexture2.jpg */; };
+		C25F9D8F20A79A0F0003E4E1 /* uranusTexture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C25F9D8420A79A0F0003E4E1 /* uranusTexture.jpg */; };
+		C25F9D9020A79A0F0003E4E1 /* neptuneTexture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C25F9D8520A79A0F0003E4E1 /* neptuneTexture.jpg */; };
+		C25F9D9120A79A0F0003E4E1 /* mercuryTexture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C25F9D8620A79A0F0003E4E1 /* mercuryTexture.jpg */; };
+		C25F9D9220A79A0F0003E4E1 /* jupiterTexture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C25F9D8720A79A0F0003E4E1 /* jupiterTexture.jpg */; };
+		C25F9D9320A79A0F0003E4E1 /* earthTexture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C25F9D8820A79A0F0003E4E1 /* earthTexture.jpg */; };
+		C25F9D9620A79A240003E4E1 /* SceneKit Scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = C25F9D9520A79A240003E4E1 /* SceneKit Scene.scn */; };
 		C2623C09202B4A5800B54ECE /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2623C08202B4A5800B54ECE /* Planet.swift */; };
 		C266D3471FD8437B00C68066 /* PlanetInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C266D3461FD8437B00C68066 /* PlanetInfoTableViewCell.swift */; };
 		C28B994A1FD85BFE008043CC /* PlanetInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28B99491FD85BFE008043CC /* PlanetInfoViewController.swift */; };
@@ -48,6 +59,17 @@
 		C223B2691FBE364800398211 /* Pages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pages.swift; sourceTree = "<group>"; };
 		C223B26B1FBE367500398211 /* PageNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageNumber.swift; sourceTree = "<group>"; };
 		C23870C22059D4F50001A029 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		C25F9D7F20A79A0E0003E4E1 /* marsTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = marsTexture.jpg; path = ARKitSampleApp/ARKitSampleApp/marsTexture.jpg; sourceTree = SOURCE_ROOT; };
+		C25F9D8020A79A0E0003E4E1 /* venusTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = venusTexture.jpg; path = ARKitSampleApp/ARKitSampleApp/venusTexture.jpg; sourceTree = SOURCE_ROOT; };
+		C25F9D8120A79A0E0003E4E1 /* sunTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sunTexture.jpg; path = ARKitSampleApp/ARKitSampleApp/sunTexture.jpg; sourceTree = SOURCE_ROOT; };
+		C25F9D8220A79A0E0003E4E1 /* saturnTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = saturnTexture.jpg; path = ARKitSampleApp/ARKitSampleApp/saturnTexture.jpg; sourceTree = SOURCE_ROOT; };
+		C25F9D8320A79A0F0003E4E1 /* saturnRingTexture2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = saturnRingTexture2.jpg; path = ARKitSampleApp/ARKitSampleApp/saturnRingTexture2.jpg; sourceTree = SOURCE_ROOT; };
+		C25F9D8420A79A0F0003E4E1 /* uranusTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = uranusTexture.jpg; path = ARKitSampleApp/ARKitSampleApp/uranusTexture.jpg; sourceTree = SOURCE_ROOT; };
+		C25F9D8520A79A0F0003E4E1 /* neptuneTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = neptuneTexture.jpg; path = ARKitSampleApp/ARKitSampleApp/neptuneTexture.jpg; sourceTree = SOURCE_ROOT; };
+		C25F9D8620A79A0F0003E4E1 /* mercuryTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = mercuryTexture.jpg; path = ARKitSampleApp/ARKitSampleApp/mercuryTexture.jpg; sourceTree = SOURCE_ROOT; };
+		C25F9D8720A79A0F0003E4E1 /* jupiterTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = jupiterTexture.jpg; path = ARKitSampleApp/ARKitSampleApp/jupiterTexture.jpg; sourceTree = SOURCE_ROOT; };
+		C25F9D8820A79A0F0003E4E1 /* earthTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = earthTexture.jpg; path = ARKitSampleApp/ARKitSampleApp/earthTexture.jpg; sourceTree = SOURCE_ROOT; };
+		C25F9D9520A79A240003E4E1 /* SceneKit Scene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = "SceneKit Scene.scn"; path = "ARKitSampleApp/ARKitSampleApp/SceneKit Scene.scn"; sourceTree = SOURCE_ROOT; };
 		C2623C08202B4A5800B54ECE /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		C266D3461FD8437B00C68066 /* PlanetInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetInfoTableViewCell.swift; sourceTree = "<group>"; };
 		C28B99491FD85BFE008043CC /* PlanetInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetInfoViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +180,23 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		C25F9D7E20A799BD0003E4E1 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				C25F9D8820A79A0F0003E4E1 /* earthTexture.jpg */,
+				C25F9D8720A79A0F0003E4E1 /* jupiterTexture.jpg */,
+				C25F9D7F20A79A0E0003E4E1 /* marsTexture.jpg */,
+				C25F9D8620A79A0F0003E4E1 /* mercuryTexture.jpg */,
+				C25F9D8520A79A0F0003E4E1 /* neptuneTexture.jpg */,
+				C25F9D8320A79A0F0003E4E1 /* saturnRingTexture2.jpg */,
+				C25F9D8220A79A0E0003E4E1 /* saturnTexture.jpg */,
+				C25F9D8120A79A0E0003E4E1 /* sunTexture.jpg */,
+				C25F9D8420A79A0F0003E4E1 /* uranusTexture.jpg */,
+				C25F9D8020A79A0E0003E4E1 /* venusTexture.jpg */,
+			);
+			path = Textures;
+			sourceTree = "<group>";
+		};
 		C260D9DE1FBDDC52002497C8 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +215,8 @@
 		C28B994B1FD87D82008043CC /* AR */ = {
 			isa = PBXGroup;
 			children = (
+				C25F9D7E20A799BD0003E4E1 /* Textures */,
+				C25F9D9520A79A240003E4E1 /* SceneKit Scene.scn */,
 				C2C943931FB0AE990041FC67 /* ARViewController.swift */,
 				C2C943911FB0AE990041FC67 /* art.scnassets */,
 			);
@@ -291,11 +332,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C25F9D8B20A79A0F0003E4E1 /* venusTexture.jpg in Resources */,
+				C25F9D8A20A79A0F0003E4E1 /* marsTexture.jpg in Resources */,
+				C25F9D9120A79A0F0003E4E1 /* mercuryTexture.jpg in Resources */,
 				C2984A611FB3573800F85B2F /* Details.storyboard in Resources */,
 				C2C943921FB0AE990041FC67 /* art.scnassets in Resources */,
+				C25F9D8C20A79A0F0003E4E1 /* sunTexture.jpg in Resources */,
+				C25F9D9020A79A0F0003E4E1 /* neptuneTexture.jpg in Resources */,
+				C25F9D8E20A79A0F0003E4E1 /* saturnRingTexture2.jpg in Resources */,
+				C25F9D9320A79A0F0003E4E1 /* earthTexture.jpg in Resources */,
 				C2C9439C1FB0AE990041FC67 /* LaunchScreen.storyboard in Resources */,
 				C2C943991FB0AE990041FC67 /* Assets.xcassets in Resources */,
+				C25F9D8D20A79A0F0003E4E1 /* saturnTexture.jpg in Resources */,
+				C25F9D9220A79A0F0003E4E1 /* jupiterTexture.jpg in Resources */,
+				C25F9D9620A79A240003E4E1 /* SceneKit Scene.scn in Resources */,
 				C2C943971FB0AE990041FC67 /* Main.storyboard in Resources */,
+				C25F9D8F20A79A0F0003E4E1 /* uranusTexture.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
