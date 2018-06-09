@@ -18,5 +18,12 @@ class PlanetsCollectionViewCell: UICollectionViewCell {
         let sideLength = contentView.frame.size.width
         contentView.layer.cornerRadius = sideLength / 8.0
         contentView.layer.masksToBounds = true
+        
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        layer.shadowRadius = 10.0
+        layer.shadowOpacity = 0.75
+        layer.masksToBounds = false
+        clipsToBounds = false
     }
 }

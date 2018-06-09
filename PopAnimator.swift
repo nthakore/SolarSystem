@@ -10,7 +10,7 @@ import UIKit
 
 class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     let duration = 1.0
-    var presenting = true
+    var shouldPresent = true
     var originFrame = CGRect.zero
     var dismissCompletion: (() -> Void)?
     
@@ -19,36 +19,34 @@ class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        let containerView = transitionContext.containerView
-        let toView = transitionContext.view(forKey: .to)!
-        let detailsView = presenting ? toView : transitionContext.view(forKey: .from)!
-        
-        var initialFrame = presenting ? originFrame : detailsView.frame
-        
-        if let toVC = transitionContext.viewController(forKey: .from) as? PlanetDetailsViewController {
-            initialFrame = toVC.planetImageView.frame
-        }
 
-        let finalFrame = presenting ? detailsView.frame : originFrame
+        let toView = transitionContext.view(forKey: .to)!
+        let detailsView = shouldPresent ? toView : transitionContext.view(forKey: .from)!
         
-        let xScaleFactor = presenting ? initialFrame.width / finalFrame.width : finalFrame.width / initialFrame.width
-        let yScaleFator = presenting ? initialFrame.height / finalFrame.height : finalFrame.height / initialFrame.height
+        var initialFrame = shouldPresent ? originFrame : detailsView.frame
+        
+        let finalFrame = shouldPresent ? detailsView.frame : originFrame
+        
+        let xScaleFactor = shouldPresent ? initialFrame.width / finalFrame.width : finalFrame.width / initialFrame.width
+        let yScaleFator = shouldPresent ? initialFrame.height / finalFrame.height : finalFrame.height / initialFrame.height
         
         let scaleTransform = CGAffineTransform(scaleX: xScaleFactor, y: yScaleFator)
-        if presenting {
+        if shouldPresent {
             detailsView.transform = scaleTransform
             detailsView.center = CGPoint(x: initialFrame.midX, y: initialFrame.midY)
             detailsView.clipsToBounds = true
         }
         
+        
+        let containerView = transitionContext.containerView
         containerView.addSubview(toView)
         containerView.bringSubview(toFront: detailsView)
         
         UIView.animate(withDuration: duration, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, animations: {
-            detailsView.transform = self.presenting ? CGAffineTransform.identity : scaleTransform
+            detailsView.transform = self.shouldPresent ? CGAffineTransform.identity : scaleTransform
             detailsView.center = CGPoint(x: finalFrame.midX, y: finalFrame.midY)
         }, completion: { _ in
-            if !self.presenting {
+            if !self.shouldPresent {
                 self.dismissCompletion?()
             }
             transitionContext.completeTransition(true)

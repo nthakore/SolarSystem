@@ -34,7 +34,7 @@ extension PlanetsCollectionViewController: UICollectionViewDelegate {
             detailsController.currentPlanet = planet
             detailsController.transitioningDelegate = self
             transition.originFrame = rect!.superview!.convert(rect!.frame, to: nil)
-            transition.presenting = true
+            transition.shouldPresent = true
             present(detailsController, animated: true, completion: nil)
         }
     }
@@ -51,11 +51,9 @@ extension PlanetsCollectionViewController: UICollectionViewDataSource {
         }
         
         let planet = itemsForCollectionView[indexPath.item]
-        let planetNameString = planet.displayName.uppercased()
-        let attributedString = NSMutableAttributedString(string: planetNameString)
-        attributedString.addAttribute(NSAttributedStringKey.kern, value: 5, range: NSRange(location: 0, length: attributedString.length - 1))
         
-        cell.planetNameLabel.attributedText = attributedString
+        cell.planetNameLabel.text = planet.displayName.uppercased()
+        cell.planetNameLabel.addKerning(value: 5)
         cell.planetImage.image = planet.planetImage
         cell.backgroundImage.image = planet.planetBackgroundImage
         
@@ -80,7 +78,7 @@ extension PlanetsCollectionViewController: UIViewControllerTransitioningDelegate
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transition.presenting = false
+        transition.shouldPresent = false
         return transition
     }
 }

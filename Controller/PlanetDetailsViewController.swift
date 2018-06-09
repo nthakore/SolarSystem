@@ -9,26 +9,31 @@
 import UIKit
 
 enum PlanetMediaTableViewRow: Int {
+    case planetImage
     case planetInfo
     case planetMediaImages
     case planetMediaVideos
+    
+    static var count: Int {
+        return PlanetMediaTableViewRow.planetMediaVideos.hashValue + 1
+    }
 }
 
 class PlanetDetailsViewController: UIViewController {
-    @IBOutlet weak var planetImageView: UIImageView!
-    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var planetMediaTableView: UITableView!
-    @IBOutlet weak var backgroundImageViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var planetImageViewHeightConstraint: NSLayoutConstraint!
     
     var currentPlanet: Planet?
     var planetInfoText: String?
+    var transitionView: UIView?
+    
     fileprivate weak var imagesCollectionView: UICollectionView?
     fileprivate weak var videosCollectionView: UICollectionView?
     fileprivate var imageCellModels = [PlanetImageCellModel]()
     fileprivate var videoCellModels = [PlanetVideoCellModel]()
     fileprivate var previousScrollViewContentOffset = CGFloat(0)
     fileprivate var didSetInitialTableViewOffset = false
+    
+
 
     @IBAction func closeButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -36,9 +41,6 @@ class PlanetDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        planetImageView.image = currentPlanet?.planetImage
-        backgroundImageView.image = currentPlanet?.planetBackgroundImage
     
         planetMediaTableView.delegate = self
         planetMediaTableView.dataSource = self
@@ -71,20 +73,6 @@ class PlanetDetailsViewController: UIViewController {
             }
         }
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        planetMediaTableView.contentOffset = CGPoint(x: 0, y: -planetImageView.frame.size.height)
-        didSetInitialTableViewOffset = true
-    }
-    
-    func adjustImageView(heightAdjustment: CGFloat) {
-        planetImageViewHeightConstraint.constant += heightAdjustment
-        backgroundImageViewHeightConstraint.constant += heightAdjustment
-        
-        view.setNeedsLayout()
-    }
 }
 
 extension PlanetDetailsViewController: UITableViewDelegate {
@@ -107,6 +95,8 @@ extension PlanetDetailsViewController: UITableViewDelegate {
         let defaultHeight = CGFloat(150)
         if let row = PlanetMediaTableViewRow(rawValue: indexPath.row) {
             switch row {
+            case .planetImage:
+                return tableView.frame.size.height * 0.6
             case .planetInfo:
                 return defaultHeight + 150
             default:
@@ -119,7 +109,7 @@ extension PlanetDetailsViewController: UITableViewDelegate {
 
 extension PlanetDetailsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 13
+        return PlanetMediaTableViewRow.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -130,6 +120,17 @@ extension PlanetDetailsViewController: UITableViewDataSource {
         var tableViewCell = UITableViewCell()
         
         switch row {
+        case .planetImage:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "PlanetImageTableViewCell") as? PlanetImageTableViewCell {
+                cell.planetBackgroundImageView.image = currentPlanet?.planetBackgroundImage
+                cell.planetImageView.image = currentPlanet?.planetImage
+                cell.planetNameLabel.text = currentPlanet?.displayName.uppercased()
+                cell.planetNameLabel.addKerning(value: 5)
+                
+                transitionView = cell
+                
+                tableViewCell = cell
+            }
         case .planetInfo:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "PlanetInfoTableViewCell") as? PlanetInfoTableViewCell {
                 cell.planetInfoLabel.text = planetInfoText
@@ -152,18 +153,6 @@ extension PlanetDetailsViewController: UITableViewDataSource {
         }
 
         return tableViewCell
-    }
-}
-
-extension PlanetDetailsViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if (scrollView == planetMediaTableView) && didSetInitialTableViewOffset {
-            let scrollDelta = -(scrollView.contentOffset.y - previousScrollViewContentOffset)
-            adjustImageView(heightAdjustment: scrollDelta)
-            
-            previousScrollViewContentOffset = scrollView.contentOffset.y
-            print("\(scrollDelta)")
-        }
     }
 }
 

@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,8 +22,47 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlanetMediaTableViewCell" id="OTu-Ll-nX4" userLabel="PlanetMediaTableViewCell" customClass="PlanetMediaTableViewCell" customModule="SolarSystem" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlanetImageTableViewCell" id="xzU-Q0-nlT" customClass="PlanetImageTableViewCell" customModule="SolarSystem" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xzU-Q0-nlT" id="lCO-kW-bcp">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kuy-vC-goR">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E3x-kR-EyH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LABEL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDg-94-yDg">
+                                                    <rect key="frame" x="131" y="96.333333333333329" width="113" height="50.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="37"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Kuy-vC-goR" firstAttribute="top" secondItem="lCO-kW-bcp" secondAttribute="top" id="5v9-NU-06s"/>
+                                                <constraint firstAttribute="bottom" secondItem="E3x-kR-EyH" secondAttribute="bottom" id="DdF-zc-s4k"/>
+                                                <constraint firstItem="E3x-kR-EyH" firstAttribute="leading" secondItem="lCO-kW-bcp" secondAttribute="leading" id="EM5-bX-FBw"/>
+                                                <constraint firstAttribute="bottom" secondItem="bDg-94-yDg" secondAttribute="bottom" constant="3" id="IXJ-1w-LxA"/>
+                                                <constraint firstItem="bDg-94-yDg" firstAttribute="centerX" secondItem="lCO-kW-bcp" secondAttribute="centerX" id="Q8N-1J-AT2"/>
+                                                <constraint firstAttribute="bottom" secondItem="Kuy-vC-goR" secondAttribute="bottom" id="TSA-GC-TKn"/>
+                                                <constraint firstItem="E3x-kR-EyH" firstAttribute="top" secondItem="lCO-kW-bcp" secondAttribute="top" id="lbK-Xy-UIZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="E3x-kR-EyH" secondAttribute="trailing" id="mDr-h2-sif"/>
+                                                <constraint firstAttribute="trailing" secondItem="Kuy-vC-goR" secondAttribute="trailing" id="pAi-in-tZy"/>
+                                                <constraint firstItem="Kuy-vC-goR" firstAttribute="leading" secondItem="lCO-kW-bcp" secondAttribute="leading" id="rvz-HL-iie"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="planetBackgroundImageView" destination="Kuy-vC-goR" id="SrV-6T-dkj"/>
+                                            <outlet property="planetImageView" destination="E3x-kR-EyH" id="Emt-Od-EmM"/>
+                                            <outlet property="planetNameLabel" destination="bDg-94-yDg" id="waL-Ky-jfX"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlanetMediaTableViewCell" id="OTu-Ll-nX4" userLabel="PlanetMediaTableViewCell" customClass="PlanetMediaTableViewCell" customModule="SolarSystem" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="178" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OTu-Ll-nX4" id="YhT-2Q-fa3">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
@@ -86,7 +124,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlanetInfoTableViewCell" id="Rmu-09-od2" customClass="PlanetInfoTableViewCell" customModule="SolarSystem" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="178" width="375" height="150"/>
+                                        <rect key="frame" x="0.0" y="328" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rmu-09-od2" id="aPO-ab-7nF">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
@@ -121,12 +159,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starrysky1" translatesAutoresizingMaskIntoConstraints="NO" id="MBM-gP-UZd">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="487.33333333333331"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mercury" translatesAutoresizingMaskIntoConstraints="NO" id="jn8-av-Hwf">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="487.33333333333331"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KT9-cr-jrK">
                                 <rect key="frame" x="319" y="44" width="40" height="40"/>
                                 <constraints>
@@ -138,37 +170,19 @@
                                     <action selector="closeButton:" destination="GTl-wZ-ewu" eventType="touchUpInside" id="cc6-Ey-hMk"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Jx-12-MxJ" userLabel="Planet Label">
-                                <rect key="frame" x="140.66666666666666" y="441.66666666666669" width="94.333333333333343" height="50.666666666666686"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="37"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jn8-av-Hwf" firstAttribute="top" secondItem="MBM-gP-UZd" secondAttribute="top" id="6EE-tZ-L6K"/>
-                            <constraint firstItem="9Jx-12-MxJ" firstAttribute="bottom" secondItem="MBM-gP-UZd" secondAttribute="bottom" constant="5" id="6pS-Xw-zwp"/>
-                            <constraint firstItem="jn8-av-Hwf" firstAttribute="bottom" secondItem="MBM-gP-UZd" secondAttribute="bottom" id="B4k-J2-HBu"/>
-                            <constraint firstItem="MBM-gP-UZd" firstAttribute="trailing" secondItem="1yC-dP-ivE" secondAttribute="trailing" id="J4D-qO-5Wf"/>
-                            <constraint firstItem="MBM-gP-UZd" firstAttribute="height" secondItem="nB7-yf-wxT" secondAttribute="height" multiplier="0.6" id="LxQ-Zg-ih7"/>
-                            <constraint firstItem="jn8-av-Hwf" firstAttribute="leading" secondItem="MBM-gP-UZd" secondAttribute="leading" id="Sy3-DL-gaX"/>
-                            <constraint firstItem="9Jx-12-MxJ" firstAttribute="centerX" secondItem="nB7-yf-wxT" secondAttribute="centerX" id="cTR-gX-p16"/>
                             <constraint firstAttribute="bottom" secondItem="o8h-nT-pvt" secondAttribute="bottom" id="mF8-F9-x9a"/>
                             <constraint firstItem="o8h-nT-pvt" firstAttribute="leading" secondItem="1yC-dP-ivE" secondAttribute="leading" id="oQW-63-SZ3"/>
                             <constraint firstItem="1yC-dP-ivE" firstAttribute="trailing" secondItem="KT9-cr-jrK" secondAttribute="trailing" constant="16" id="piQ-Ut-R5O"/>
-                            <constraint firstItem="MBM-gP-UZd" firstAttribute="leading" secondItem="1yC-dP-ivE" secondAttribute="leading" id="q79-g5-BZr"/>
-                            <constraint firstItem="jn8-av-Hwf" firstAttribute="trailing" secondItem="MBM-gP-UZd" secondAttribute="trailing" id="qmF-Xy-BOw"/>
                             <constraint firstItem="1yC-dP-ivE" firstAttribute="trailing" secondItem="o8h-nT-pvt" secondAttribute="trailing" id="sV8-uZ-cOo"/>
                             <constraint firstItem="KT9-cr-jrK" firstAttribute="top" secondItem="1yC-dP-ivE" secondAttribute="top" id="vlc-en-cLf"/>
-                            <constraint firstItem="MBM-gP-UZd" firstAttribute="top" secondItem="nB7-yf-wxT" secondAttribute="top" id="yEo-6x-zYp"/>
                             <constraint firstItem="o8h-nT-pvt" firstAttribute="top" secondItem="nB7-yf-wxT" secondAttribute="top" id="zCa-ea-IAY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1yC-dP-ivE"/>
                     </view>
                     <connections>
-                        <outlet property="backgroundImageView" destination="MBM-gP-UZd" id="U1T-lW-3WM"/>
-                        <outlet property="planetImageView" destination="jn8-av-Hwf" id="744-sh-9q0"/>
                         <outlet property="planetMediaTableView" destination="o8h-nT-pvt" id="omq-nD-cNV"/>
                     </connections>
                 </viewController>
@@ -294,7 +308,5 @@
     </scenes>
     <resources>
         <image name="Close button" width="600" height="600"/>
-        <image name="Mercury" width="800" height="800"/>
-        <image name="starrysky1" width="1530" height="1200"/>
     </resources>
 </document>
