@@ -38,6 +38,7 @@ class PlanetDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         planetImageView.image = currentPlanet?.planetImage
+        backgroundImageView.image = currentPlanet?.planetBackgroundImage
     
         planetMediaTableView.delegate = self
         planetMediaTableView.dataSource = self

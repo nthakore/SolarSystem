@@ -25,11 +25,9 @@ class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         
         var initialFrame = presenting ? originFrame : detailsView.frame
         
-        // I added this part --------------
         if let toVC = transitionContext.viewController(forKey: .from) as? PlanetDetailsViewController {
             initialFrame = toVC.planetImageView.frame
         }
-        //------------------------
 
         let finalFrame = presenting ? detailsView.frame : originFrame
         

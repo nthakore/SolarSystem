@@ -51,26 +51,26 @@ extension PlanetsCollectionViewController: UICollectionViewDataSource {
         }
         
         let planet = itemsForCollectionView[indexPath.item]
-        cell.planetNameLabel.text = planet.displayName
-        cell.planetImage.image = planet.planetImage
+        let planetNameString = planet.displayName.uppercased()
+        let attributedString = NSMutableAttributedString(string: planetNameString)
+        attributedString.addAttribute(NSAttributedStringKey.kern, value: 5, range: NSRange(location: 0, length: attributedString.length - 1))
         
-        cell.backgroundColor = .red
+        cell.planetNameLabel.attributedText = attributedString
+        cell.planetImage.image = planet.planetImage
+        cell.backgroundImage.image = planet.planetBackgroundImage
         
         return cell
     }
 }
 
 extension PlanetsCollectionViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var size = CGSize(width: 120, height: 120)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {        
+        let sideMargin = CGFloat(16)
+        let collectionViewSize = collectionView.frame.size
+        let cellWidth = collectionViewSize.width - 2.0 * sideMargin
+        let cellHeight = collectionViewSize.height * 0.6
         
-        let spacing = CGFloat(16)
-        let cvWidth = collectionView.bounds.size.width
-        let remainingSpace = cvWidth - (2 * spacing)
-        let cellSize = remainingSpace
-        size = CGSize(width: cellSize, height: cellSize)
-
-        return size
+        return CGSize(width: cellWidth, height: cellHeight)
     }
 }
 

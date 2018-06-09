@@ -100,21 +100,21 @@ extension Planet {
     var orbitDuration: TimeInterval {
         switch self {
         case .mercury:
-            return 1
+            return 12
         case .venus:
-            return 2
+            return 15
         case .earth:
-            return 3
+            return 18
         case .mars:
-            return 4
+            return 21
         case .jupiter:
-            return 5
+            return 24
         case .saturn:
-            return 6
+            return 27
         case .uranus:
-            return 7
+            return 30
         case .neptune:
-            return 8
+            return 33
         }
     }
     

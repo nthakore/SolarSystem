@@ -60,4 +60,25 @@ enum Planet {
             return #imageLiteral(resourceName: "Neptune")
         }
     }
+    
+    var planetBackgroundImage: UIImage {
+        switch self {
+        case .mercury:
+            return #imageLiteral(resourceName: "starrysky1")
+        case .venus:
+            return #imageLiteral(resourceName: "starrysky2")
+        case .earth:
+            return #imageLiteral(resourceName: "starrysky3")
+        case .mars:
+            return #imageLiteral(resourceName: "starrysky4")
+        case .jupiter:
+            return #imageLiteral(resourceName: "starrysky5")
+        case .saturn:
+            return #imageLiteral(resourceName: "starrysky6")
+        case .uranus:
+            return #imageLiteral(resourceName: "starrysky7")
+        case .neptune:
+            return #imageLiteral(resourceName: "starrysky8")
+        }
+    }
 }
