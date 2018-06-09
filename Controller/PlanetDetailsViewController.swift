@@ -33,9 +33,14 @@ class PlanetDetailsViewController: UIViewController {
     fileprivate var previousScrollViewContentOffset = CGFloat(0)
     fileprivate var didSetInitialTableViewOffset = false
     
-
-
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
+    }
+    
     @IBAction func closeButton(_ sender: Any) {
+        let planetImageCell = planetMediaTableView.cellForRow(at: IndexPath(row: 0, section: 0))
+        transitionView = planetImageCell!
+        
         dismiss(animated: true, completion: nil)
     }
     
@@ -126,8 +131,6 @@ extension PlanetDetailsViewController: UITableViewDataSource {
                 cell.planetImageView.image = currentPlanet?.planetImage
                 cell.planetNameLabel.text = currentPlanet?.displayName.uppercased()
                 cell.planetNameLabel.addKerning(value: 5)
-                
-                transitionView = cell
                 
                 tableViewCell = cell
             }

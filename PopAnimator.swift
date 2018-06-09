@@ -9,9 +9,10 @@
 import UIKit
 
 class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
-    let duration = 1.0
-    var shouldPresent = true
+    let duration = 0.25
+    var isPresenting = true
     var originFrame = CGRect.zero
+    var originView = UIView()
     var dismissCompletion: (() -> Void)?
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
@@ -19,37 +20,55 @@ class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-
         let toView = transitionContext.view(forKey: .to)!
-        let detailsView = shouldPresent ? toView : transitionContext.view(forKey: .from)!
+        let fromView = transitionContext.view(forKey: .from)!
         
-        var initialFrame = shouldPresent ? originFrame : detailsView.frame
+        let scaleTransform = CGAffineTransform(scaleX: 1.1, y: 1.1)
         
-        let finalFrame = shouldPresent ? detailsView.frame : originFrame
-        
-        let xScaleFactor = shouldPresent ? initialFrame.width / finalFrame.width : finalFrame.width / initialFrame.width
-        let yScaleFator = shouldPresent ? initialFrame.height / finalFrame.height : finalFrame.height / initialFrame.height
-        
-        let scaleTransform = CGAffineTransform(scaleX: xScaleFactor, y: yScaleFator)
-        if shouldPresent {
-            detailsView.transform = scaleTransform
-            detailsView.center = CGPoint(x: initialFrame.midX, y: initialFrame.midY)
-            detailsView.clipsToBounds = true
+        if isPresenting {
+            toView.clipsToBounds = true
         }
         
-        
         let containerView = transitionContext.containerView
-        containerView.addSubview(toView)
-        containerView.bringSubview(toFront: detailsView)
         
-        UIView.animate(withDuration: duration, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, animations: {
-            detailsView.transform = self.shouldPresent ? CGAffineTransform.identity : scaleTransform
-            detailsView.center = CGPoint(x: finalFrame.midX, y: finalFrame.midY)
-        }, completion: { _ in
-            if !self.shouldPresent {
-                self.dismissCompletion?()
+        var viewToBringToFront = UIView()
+        if isPresenting {
+            viewToBringToFront = toView
+        } else {
+            viewToBringToFront = fromView
+        }
+        
+        containerView.addSubview(toView)
+        
+        if !isPresenting {
+            containerView.addSubview(viewToBringToFront)
+        }
+        containerView.bringSubview(toFront: viewToBringToFront)
+        
+        if isPresenting {
+            UIView.animate(withDuration: duration, delay: 0.0, options: [UIViewAnimationOptions.curveEaseOut], animations: {
+                    viewToBringToFront.transform = scaleTransform
+            }) { (complete) in
+                UIView.animate(withDuration: self.duration, delay: 0.0, options: [UIViewAnimationOptions.curveEaseOut], animations: {
+                    viewToBringToFront.transform = CGAffineTransform.identity
+                }) { (complete) in
+                    if !self.isPresenting {
+                        self.dismissCompletion?()
+                    }
+                    
+                    transitionContext.completeTransition(true)
+                }
             }
-            transitionContext.completeTransition(true)
-        })
+        } else {
+            UIView.animate(withDuration: 0.5, animations: {
+                viewToBringToFront.alpha = 0.0
+            }) { (complete) in
+                if !self.isPresenting {
+                    self.dismissCompletion?()
+                }
+                
+                transitionContext.completeTransition(true)
+            }
+        }
     }
 }
