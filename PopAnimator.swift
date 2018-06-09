@@ -55,7 +55,7 @@ class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
                     if !self.isPresenting {
                         self.dismissCompletion?()
                     }
-                    
+
                     transitionContext.completeTransition(true)
                 }
             }

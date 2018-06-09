@@ -19,10 +19,16 @@ class NASAAPI: NSObject {
             Networking.executeDataTask(url: url, networkCompletionHandler: { (responseObject) in
                 if let object = responseObject as? [String: AnyObject], let collectionDict = object["collection"] as? [String: AnyObject] {
                     if let itemsArray = collectionDict["items"] as? [[String: AnyObject]] {
-                        var numberOfItems = 5
+
                         var planetVideoModel: PlanetVideoCellModel = ("", "")
                         var planetVideos = [PlanetVideoCellModel]()
-                        for item in itemsArray[0...10] {
+                        
+                        var numberOfItems = 5
+                        if itemsArray.count < 5 {
+                            numberOfItems = itemsArray.count
+                        }
+                        
+                        for item in itemsArray[0..<numberOfItems] {
                             if let assetCollectionURLString = item["href"] as? String {
                                 if let encodedAssetCollectionURLString = assetCollectionURLString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let assetURL = URL(string: encodedAssetCollectionURLString) {
                                     Networking.executeDataTask(url: assetURL, networkCompletionHandler: { (assetsObject) in
