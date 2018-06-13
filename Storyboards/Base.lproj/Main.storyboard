@@ -198,7 +198,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </arscnView>
-                    <tabBarItem key="tabBarItem" title="Item" id="G9X-bn-kMP"/>
+                    <tabBarItem key="tabBarItem" title="" image="ARicon" id="G9X-bn-kMP"/>
                     <connections>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
                     </connections>
@@ -276,7 +276,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="if7-P1-AB0"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="U4b-Qe-7XV"/>
+                    <tabBarItem key="tabBarItem" title="" image="InfoIcon" springLoaded="YES" id="U4b-Qe-7XV"/>
                     <navigationItem key="navigationItem" id="tgx-ka-ruT"/>
                     <connections>
                         <outlet property="planetsCollectionView" destination="a9Q-Mj-TPO" id="GSI-Et-Rwd"/>
@@ -307,6 +307,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ARicon" width="25" height="25"/>
         <image name="Close button" width="600" height="600"/>
+        <image name="InfoIcon" width="25" height="25"/>
     </resources>
 </document>
